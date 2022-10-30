@@ -1,6 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+It is an experimental repo, created to familiarize with `nextjs`, `javascript` and `react`.
+
+## How to run the site in developement mode
 
 First, run the development server:
 
@@ -25,6 +27,7 @@ To learn more about Next.js, take a look at the following resources:
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
+<<<<<<< HEAD
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
@@ -38,3 +41,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 You need:
 - [grey-matter](https://www.npmjs.com/package/gray-matter)
+=======
+You can also check out [the Next.js GitHub repository](https://github.com/vercel/next.js/).
+>>>>>>> d7b503f615b43ab46474fb3c2b4a112c1ba8162c
