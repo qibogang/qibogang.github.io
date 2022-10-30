@@ -1,5 +1,6 @@
 import Link from "next/link"
 import styled from "styled-components"
+import Image from "next/image"
 
 const Nav = styled.nav`
     height: 80px;
@@ -14,15 +15,18 @@ const Nav = styled.nav`
 
 const StyledLink = styled.a`
     padding: 0rem 2rem;
+    font-size: 25px;
 `
 
 const Navbar = () => {
   return (
     <Nav>
         <div>
-            <Link legacyBehavior href="/" passHref>
-                <StyledLink>Qibo | Quantum OS </StyledLink>
-            </Link>
+            <Image 
+                src="/../public/qibo_logo.png" 
+                width='130'
+                height='60'
+            />
         </div>
         <div> 
             <Link legacyBehavior href="/" passHref>

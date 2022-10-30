@@ -1,8 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Navbar from '../components/Navbar'
 import styles from '../styles/Home.module.css'
 import styled from 'styled-components'
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import Post from '../components/Post'
+
 
 const Hero = styled.div`
   height: 88vh;
@@ -18,7 +22,7 @@ const Heading = styled.div`
   font-weight: 800;
 `
 
-export default function About() {
+export default function Tutorials({posts}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -27,10 +31,36 @@ export default function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head> 
        <Hero>
-        <Heading>
-          Some tutorial will be here
-        </Heading>
+        <div className='posts'>
+          {posts.map((post, index) => (
+            <Post post={post} />
+          ))}
+        </div>
       </Hero>
     </div>
   )
+}
+
+
+export async function getStaticProps() {
+  // get files from the posts directory
+  const files = fs.readdirSync(path.join('posts'))
+  // get slug and frontmatter
+  const posts = files.map(filename => {
+    // create the slug
+    const slug = filename.replace('.md', '')
+    const markdownWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8')
+
+    const {data:frontmatter} = matter(markdownWithMeta)
+
+    return{
+      slug,
+      frontmatter
+    }
+  })
+  return {
+    props: {
+      posts
+    }
+  }
 }
