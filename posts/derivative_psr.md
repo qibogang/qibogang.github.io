@@ -1,7 +1,7 @@
 ---
-title: 'Derivative of a function through parameter shift rule'
+title: 'Derivative of a circuit'
 cover_image: 'images/posts/derivative_psr.png'
-excerpt: 'Using a variational quantum circuit to fit one dimensional functions.'
+excerpt: 'Using the parameter shift rule to calculate the derivative of a circuit.'
 ---
 
 ## A variational quantum regressor using the parameter shift rule
