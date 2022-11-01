@@ -20,6 +20,16 @@ pfooter {
   color: rgb(251, 250, 250);
 }
 
+a-big {
+  position: relative;
+  color: rgb(251, 250, 250);
+  padding-right: 57%;
+  width: 100%;
+  height: 100%;
+  margin-left: 0;
+}
+
+
 a {
   text-decoration: none;
   color: rgb(251, 250, 250);
@@ -74,19 +84,17 @@ header a {
 }
 
 .btn {
-  display: inline-block;
-  background: #6400FF;;
+  display:inline-block;
+  background: #6400FF;
   color: #fff;
-  border: none;
-  padding: 8px 16px;
+  margin: 5px;
+  padding-right: 5px;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
-  width: 100%;
   text-align: center;
-  opacity: 1;
 }
 
 .btn:focus {
@@ -144,7 +152,7 @@ header a {
 
 .card {
   padding: 15px;
-  border-radius: 20px;
+  border-radius: 0px;
   box-shadow: 0 0px 0px 2px #6400FF;
   font-family: 'Arial', sans-serif;
   text-align: center;
@@ -216,7 +224,7 @@ nav{
   display: flex;
   padding: 0px;
   padding-left: 11.5%;
-  padding-right: 14%;
+  padding-right: 11.5%;
   justify-content:space-between;
   align-items: center;
   background-color: #6400FF;
@@ -246,7 +254,7 @@ nav{
   flex-direction: column;
   position: fixed;
   top: 60px;
-  width: 288px;
+  width: 188px;
   row-gap: 24px;
   right: -288px;
   padding: 24px 16px;
@@ -279,6 +287,16 @@ nav{
 }
 
 
+@media screen and (max-width: 700px) {
+  .btn {
+    display:grid;
+  }
+  .dropbtn {
+    display:contents;
+  }
+}
+
+
 @media screen and (min-width: 768px) {
   .nav__menu-bar{
     display: none;
@@ -306,6 +324,7 @@ nav{
   .nav__link:hover:before{
    width: 100%;
   }
+
 }
 
 
@@ -355,3 +374,4 @@ nav{
 .dropdown:hover .dropbtn {
   background-color: #cb5dd1;
 }
+

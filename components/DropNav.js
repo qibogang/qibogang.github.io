@@ -1,10 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import React, { useState } from "react";
-import NavItem from "./NavItem";
 
-const MENU_LIST = [
-];
 
 const DropNav = () => {
   const [navActive, setNavActive] = useState(null);
@@ -22,39 +19,33 @@ const DropNav = () => {
             />
           </a>
         </Link>
-        <div
-          onClick={() => setNavActive(!navActive)}
-          className={`nav__menu-bar`}
-        >
-          <div></div>
-          <div></div>
-          <div></div>
+        
+        <div>
+            <Link legacyBehavior href={'/Docs/Qibocal/last'}>
+                <a className='btn'> Qibocal </a>
+            </Link>
+            <Link legacyBehavior href={'/Docs/Qibolab/last'}>
+                <a className='btn'> Qibolab </a>
+            </Link>
+            <div class="dropdown">
+                <button class="dropbtn">Releases</button>
+                <div class="dropdown-content">
+                    <a href="#">Stable</a>
+                    <a href="#">1.0.8</a>
+                    <a href="#">0.1.9</a>
+                    <a href="#">0.1.2</a>
+                </div>
+            </div> 
+            <Link legacyBehavior href={'https://github.com/qiboteam/qibo'}>
+            <a className="btn">
+              <Image 
+                src="/../public/github_logo.png" 
+                width='40'
+                height='25'
+            />
+            </a>
+          </Link>
         </div>
-        <div className={`${navActive ? "active" : ""} nav__menu-list`}>
-          {MENU_LIST.map((menu, idx) => (
-            <div
-              onClick={() => {
-                setActiveIdx(idx);
-                setNavActive(false);
-              }}
-              key={menu.text}
-            >
-              <NavItem active={activeIdx === idx} {...menu} />
-            </div>
-          ))}
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">Other docs</button>
-          <div class="dropdown-content">
-            <a href='#'> Stable </a>
-            <a href="#">1.8.0</a>
-            <a href="#">1.7.4</a>
-            <a href="#">1.6.2</a>
-            <a href="/Docs/Qibolab/last">Qibolab</a>
-            <a href="/Docs/Qibocal/last">Qibocal</a>
-
-          </div>
-        </div> 
       </nav>
     </header>
   );

@@ -3,6 +3,7 @@ import Navbar from '../components/QibocalNavbar'
 import styles from '../styles/Home.module.css'
 import styled from 'styled-components'
 import DropNav from '../components/DropNav'
+import Footer from '../components/Footer'
 
 const Hero = styled.div`
   height: 88vh;
@@ -37,6 +38,7 @@ export default function Documentation() {
           frameBorder="0">
         </iframe> 
       </Hero>
+      <Footer/>
     </div>
   )
 }

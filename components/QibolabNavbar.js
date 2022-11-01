@@ -22,34 +22,31 @@ const QibolabNavbar = () => {
             />
           </a>
         </Link>
-        <div
-          onClick={() => setNavActive(!navActive)}
-          className={`nav__menu-bar`}
-        >
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-        <div className={`${navActive ? "active" : ""} nav__menu-list`}>
-          {MENU_LIST.map((menu, idx) => (
-            <div
-              onClick={() => {
-                setActiveIdx(idx);
-                setNavActive(false);
-              }}
-              key={menu.text}
-            >
-              <NavItem active={activeIdx === idx} {...menu} />
+        
+        <div>
+          <Link legacyBehavior href={'/Docs/Qibo/last'}>
+            <a className='btn'> Qibo </a>
+          </Link>
+          <Link legacyBehavior href={'/Docs/Qibocal/last'}>
+            <a className='btn'> Qibocal </a>
+          </Link>
+          <div class="dropdown">
+            <button class="dropbtn">Releases</button>
+            <div class="dropdown-content">
+              <a href="#">Stable</a>
+              <a href="#">0.0.1</a>
             </div>
-          ))}
+          </div> 
+          <Link legacyBehavior href={'https://github.com/qiboteam/qibolab'}>
+            <a className="btn">
+              <Image 
+                src="/../public/github_logo.png" 
+                width='40'
+                height='25'
+            />
+            </a>
+          </Link>
         </div>
-        <div class="dropdown">
-          <button class="dropbtn">Other docs</button>
-          <div class="dropdown-content">
-            <a href="/Docs/Qibo/last">Qibo</a>
-            <a href="/Docs/Qibocal/last">Qibocal</a>
-          </div>
-        </div> 
       </nav>
     </header>
   );
