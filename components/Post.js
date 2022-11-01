@@ -8,7 +8,7 @@ export default function Post({post}) {
             <img src={post.frontmatter.cover_image} alt='/' />
             <p> {post.frontmatter.excerpt} </p>
             <Link legacyBehavior href={`/Tutorials/${post.slug}`}> 
-                <a className='btn'> Read more </a>
+                <a className='btn-half'> Read more </a>
             </Link>
         </div>
     )

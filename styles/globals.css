@@ -1,5 +1,4 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -43,10 +42,12 @@ header {
   color: #fff;
   padding: 0px;
   margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 header a {
   color: #fff;
+  margin: 0;
 }
 
 .container {
@@ -97,7 +98,6 @@ header a {
 }
 
 .btn-back {
-  
   background: #6400FF;
   color: rgb(255, 255, 255);
   margin-top: 5px;
@@ -128,6 +128,8 @@ header a {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-top: 0px;
+  width: 77%;
+  padding: 25px;
 }
 
 
@@ -143,7 +145,7 @@ header a {
 .card {
   padding: 15px;
   border-radius: 20px;
-  box-shadow: 0 4px 8px 0 #6400FF;
+  box-shadow: 0 0px 0px 2px #6400FF;
   font-family: 'Arial', sans-serif;
   text-align: center;
 }
@@ -177,14 +179,17 @@ ol {
   line-height: 2.3;
 }
 
+
+
+
 @media (max-width: 700px) {
   .posts {
     align-items: center;
     margin-top: auto;
     margin-bottom: 50px;
     grid-template-columns: 1fr;
-    width: 100%;
-    padding: 20px;
+    width: 77%;
+    padding: 5%;
     flex-direction: column;
   }
 }
@@ -203,17 +208,22 @@ header{
   z-index: 30;
   top: 0;
   margin: 0;
+  padding: 0;
+  margin-top: 0%;
 }
 
 nav{
   display: flex;
   padding: 0px;
-  padding-left: 100px;
-  justify-content: space-between;
+  padding-left: 11.5%;
+  padding-right: 14%;
+  justify-content:space-between;
   align-items: center;
   background-color: #6400FF;
   margin: 0;
 }
+
+
 .nav__menu-bar{
   display: flex;
   flex-direction: column;
@@ -221,12 +231,16 @@ nav{
   cursor: pointer;
   margin: 0;
 }
+
+
 .nav__menu-bar div{
   width: 40px;
   height: 4px;
   background-color: rgb(255, 253, 253);
   border-radius: 2px;
 }
+
+
 .nav__menu-list{
   display: flex;
   flex-direction: column;
@@ -240,9 +254,13 @@ nav{
   min-height: calc(100vh - 60px);
   background-color: #6400FF;
 }
+
+
 .nav__menu-list.active{
   right: 0;
 }
+
+
 .nav__link{
   font-size: 18px; 
   position: relative;
@@ -269,6 +287,7 @@ nav{
     position: unset;
     flex-direction: row;
     min-height: fit-content;
+    right: 10%;
     width: fit-content;
     column-gap: 24px;
     align-items: center;
@@ -292,15 +311,12 @@ nav{
 
 /* Style The Dropdown Button */
 .dropbtn {
-  background-color:  #6400FF;
+  background-color: #6400FF;
   color: white;
-  padding: 16px;
+  padding: 24px;
   font-size: 16px;
   border: none;
   cursor: pointer;
-  opacity: 0.9;
-  position: relative;
-  left: 1100%;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -317,7 +333,6 @@ nav{
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  left: 1100%;
 }
 
 /* Links inside the dropdown */
@@ -338,6 +353,5 @@ nav{
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color:  #6400FF;
-  opacity: 0.5;
+  background-color: #cb5dd1;
 }
