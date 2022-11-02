@@ -11,6 +11,8 @@ const Hero = styled.div`
   justify-content: center;
   background: #fff;
   align-items: center;
+  padding-left: 11.5%;
+  padding-right: 11.5%;
 `
 
 const Heading = styled.div`

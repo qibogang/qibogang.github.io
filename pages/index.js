@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 import styled from 'styled-components'
 import DynNavbar from '../components/DynNavbar'
 import Link from 'next/link'
+import Footer from '../components/Footer'
 
 const Hero = styled.div`
   height: 88vh;
@@ -13,6 +14,8 @@ const Hero = styled.div`
   background: #fff;
   align-items: center;
   padding-bottom: 10px;
+  padding-left: 10%;
+  padding-right: 10%;
 `
 
 const Heading = styled.div`
@@ -65,7 +68,10 @@ export default function Home() {
             </Link>
           </div>
         </div>
+      
       </Hero>
+      <Footer/>
+
     </div>
   )
 }

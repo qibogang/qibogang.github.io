@@ -88,12 +88,24 @@ header a {
   background: #6400FF;
   color: #fff;
   margin: 5px;
-  padding-right: 5px;
-  border-radius: 5px;
+  padding-right: 10px;
+  border-radius: 10px;
   cursor: pointer;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+
+.imgbtn {
+  display:inline-flex;
+  background: #6400FF;
+  color: #fff;
+  margin: 0px;
+  padding-right: 10px;
+  padding-top: 10px;
+  cursor: pointer;
   text-align: center;
 }
 
@@ -136,7 +148,7 @@ header a {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-top: 0px;
-  width: 77%;
+  width: 100%;
   padding: 25px;
 }
 
@@ -225,7 +237,7 @@ nav{
   padding: 0px;
   padding-left: 11.5%;
   padding-right: 11.5%;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
   background-color: #6400FF;
   margin: 0;
@@ -287,17 +299,19 @@ nav{
 }
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 780px) {
   .btn {
-    display:grid;
+    display: none;
   }
   .dropbtn {
-    display:contents;
+    display: none;
   }
+
+  
 }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 780px) {
   .nav__menu-bar{
     display: none;
   }
@@ -325,6 +339,10 @@ nav{
    width: 100%;
   }
 
+  .bigdropbtn{
+    display: none;
+  }
+
 }
 
 
@@ -332,10 +350,13 @@ nav{
 .dropbtn {
   background-color: #6400FF;
   color: white;
-  padding: 24px;
+  padding: 16px;
+  padding-right: 10px;
+  padding-left: 10px;
   font-size: 16px;
   border: none;
   cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -367,11 +388,58 @@ nav{
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
-  display: block;
+  display:table-column;
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: #cb5dd1;
+  background-color: #8535fd;
 }
 
+
+/* bigdrop */
+
+.bigdropbtn {
+  background-color: #6400FF;
+  color: white;
+  padding: 24px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.bigdropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.bigdropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.bigdropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.bigdropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.bigdropdown:hover .bigdropdown-content {
+  display:table-column;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.bigdropdown:hover .bigdropbtn {
+  background-color: #cb5dd1;
+}

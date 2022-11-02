@@ -9,42 +9,59 @@ const DropNav = () => {
 
   return (
     <header>
+      
       <nav className={`nav`}>
         <Link legacyBehavior href={"/"}>
           <a>
             <Image 
                 src="/../public/qibo_logo.png" 
-                width='80'
-                height='40'
+                width='70'
+                height='35'
             />
           </a>
         </Link>
         
         <div>
-            <Link legacyBehavior href={'/Docs/Qibocal/last'}>
-                <a className='btn'> Qibocal </a>
-            </Link>
-            <Link legacyBehavior href={'/Docs/Qibolab/last'}>
-                <a className='btn'> Qibolab </a>
-            </Link>
-            <div class="dropdown">
-                <button class="dropbtn">Releases</button>
-                <div class="dropdown-content">
-                    <a href="#">Stable</a>
-                    <a href="#">1.0.8</a>
-                    <a href="#">0.1.9</a>
-                    <a href="#">0.1.2</a>
-                </div>
-            </div> 
-            <Link legacyBehavior href={'https://github.com/qiboteam/qibo'}>
-            <a className="btn">
-              <Image 
-                src="/../public/github_logo.png" 
-                width='40'
-                height='25'
-            />
-            </a>
+          
+          <div class="dropdown">
+            <button class="dropbtn">Qibo releases</button>
+              <div class="dropdown-content">
+                <a href="#">Stable</a>
+                <a href="#">1.0.8</a>
+                <a href="#">0.7.3</a>
+                <a href="#">0.5.8</a>
+                <a href="#">0.2.3</a>
+              </div>
+          </div> 
+
+          <div class="dropdown">
+            <button class="dropbtn">Documentation</button>
+              <div class="dropdown-content">
+                <a href="/Docs/Qibo/last">Qibo</a>
+                <a href="/Docs/Qibolab/last">Qibolab</a>
+                <a href="/Docs/Qibocal/last">Qibocal</a>
+              </div>
+          </div> 
+          
+          <Link legacyBehavior href={'/Tutorials'}>
+            <a className='btn'> Tutorials </a>
           </Link>
+          
+          <Link legacyBehavior href={'/'}>
+            <a className='btn'> Home </a>
+          </Link>
+
+          <div class="bigdropdown">
+            <button class="bigdropbtn">Menu</button>
+              <div class="bigdropdown-content">
+                <a href="/">Home</a>
+                <a href="/Tutorials">Tutorials</a>
+                <a href="/Docs/Qibo/last">Qibo</a>
+                <a href="/Docs/Qibolab/last">Qibolab</a>
+                <a href="/Docs/Qibocal/last">Qibocal</a>
+              </div>
+          </div> 
+
         </div>
       </nav>
     </header>

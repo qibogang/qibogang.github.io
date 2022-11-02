@@ -2,7 +2,6 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { marked } from 'marked'
-import Link from 'next/link'
 import styled from 'styled-components'
 import DynNavbar from '../../components/DynNavbar'
 
@@ -13,6 +12,8 @@ const Hero = styled.div`
   justify-content: center;
   background: #fff;
   align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
 `
 
 export default function PostPage({
@@ -23,9 +24,6 @@ export default function PostPage({
   return (
     <>
       <DynNavbar/>
-      <Link legacyBehavior href='/Tutorials'>
-        <a className='btn-back'>Go Back</a>
-      </Link>
       <Hero>
         <div className='card card-page'>
           <img src={cover_image} alt='' />
