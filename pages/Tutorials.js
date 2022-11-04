@@ -11,7 +11,6 @@ import Footer from '../components/Footer'
 
 
 const Hero = styled.div`
-  height: 88vh;
   display: flex;
   padding-bottom: 10px;
   justify-content: center;

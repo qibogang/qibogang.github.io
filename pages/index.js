@@ -6,6 +6,7 @@ import DynNavbar from '../components/DynNavbar'
 import Footer from '../components/Footer'
 import bg from '../public/images/home/bg.jpeg'
 import NextJsCarousel from '../components/Carousel'
+import Link from 'next/link'
 
 
 const Hero = styled.div`
@@ -19,14 +20,15 @@ const Hero = styled.div`
 `
 
 const CarouselHero = styled.div`
-  height: 88vh;
+  height: 98vh;
   display: flex;
   justify-content: center;
   background-image: url(${bg});
   align-items: center;
-  padding-top: 2%;
+  padding-top: 10%;
   padding-left: 0%;
   padding-right: 0%;
+  padding-bottom: 5%;
 `
 
 export default function Home() {
@@ -40,6 +42,7 @@ export default function Home() {
       <DynNavbar/>
 
       <Hero>
+      <div>
       <div className='two-posts'>
         <div className='home-card'>
           <div className='row-padded-element'>          
@@ -53,10 +56,12 @@ export default function Home() {
           <img src='/images/home/Hero.png' alt='/'/>
         </div>
       </div>
+
+      </div>
       </Hero>
 
       <div className='in-container'>
-        <div className='row-padded-element'>          
+        <div className='row-padded-element'  id='OpenEco'>          
           <div className='h1-custom'>An open quantum ecosystem</div>
         </div>
       </div>

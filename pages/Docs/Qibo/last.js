@@ -8,8 +8,9 @@ const Hero = styled.div`
   height: 88vh;
   display: flex;
   justify-content: center;
-  background: #fff;
   align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
 `
 
 
@@ -31,7 +32,7 @@ export default function Documentation() {
           width='100%'
           height='100%'
           frameBorder="0">
-        </iframe> 
+        </iframe>   
       </Hero>
     </div>
   )

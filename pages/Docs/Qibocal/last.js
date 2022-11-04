@@ -9,6 +9,8 @@ const Hero = styled.div`
   justify-content: center;
   background: #fff;
   align-items: center;
+  padding-right: 5%;
+  padding-left: 5%;
 `
 
 const Heading = styled.div`
