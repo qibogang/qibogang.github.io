@@ -4,9 +4,7 @@ import styles from '../styles/Home.module.css'
 import styled from 'styled-components'
 import DynNavbar from '../components/DynNavbar'
 import Footer from '../components/Footer'
-import bg from '../public/images/home/bg.jpeg'
 import NextJsCarousel from '../components/Carousel'
-import Link from 'next/link'
 
 
 const Hero = styled.div`
