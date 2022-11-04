@@ -11,7 +11,6 @@ const Hero = styled.div`
   height: 88vh;
   display: flex;
   justify-content: center;
-  background-image: url(${bg});
   align-items: center;
   padding-left: 10%;
   padding-right: 10%;
@@ -21,7 +20,6 @@ const CarouselHero = styled.div`
   height: 98vh;
   display: flex;
   justify-content: center;
-  background-image: url(${bg});
   align-items: center;
   padding-top: 10%;
   padding-left: 0%;
