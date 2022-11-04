@@ -18,6 +18,17 @@ const Hero = styled.div`
   padding-right: 10%;
 `
 
+const CarouselHero = styled.div`
+  height: 88vh;
+  display: flex;
+  justify-content: center;
+  background-image: url(${bg});
+  align-items: center;
+  padding-top: 2%;
+  padding-left: 0%;
+  padding-right: 0%;
+`
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -104,9 +115,9 @@ export default function Home() {
         </div>
       </div>
 
-      <Hero>
+      <CarouselHero>
         <NextJsCarousel/>
-      </Hero>
+      </CarouselHero>
 
       <div className='in-container'>
         <div className='row-padded-element'>          
