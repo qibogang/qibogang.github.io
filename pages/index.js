@@ -1,29 +1,22 @@
 import Head from 'next/head'
 import Image from 'next/image'
-//import fs from 'fs'
 import styles from '../styles/Home.module.css'
 import styled from 'styled-components'
 import DynNavbar from '../components/DynNavbar'
-import Link from 'next/link'
 import Footer from '../components/Footer'
+import bg from '../public/images/home/bg.jpeg'
+import NextJsCarousel from '../components/Carousel'
+
 
 const Hero = styled.div`
   height: 88vh;
   display: flex;
   justify-content: center;
-  background: #fff;
+  background-image: url(${bg});
   align-items: center;
-  padding-bottom: 10px;
   padding-left: 10%;
   padding-right: 10%;
 `
-
-const Heading = styled.div`
-  color: #883b8f;
-  font-size: 60px;
-  font-weight: 800;
-`
-
 
 export default function Home() {
   return (
@@ -34,42 +27,117 @@ export default function Home() {
         <Image rel="icon" href="/../public/Q.png" />
       </Head>
       <DynNavbar/>
+
       <Hero>
-        <div className='posts'>
-          <div className='card'>
-            <img src='/images/home/qibo_draw.png' alt='/'/>
-            <p> 
-              Write your algorithm using the API language, choose the best backend
-              for your execution and enjoy our quantum simulation tool. 
-            </p>
-            <Link legacyBehavior href={`/Documentation`}> 
-                <a className='btn-half'> Documentation </a>
-            </Link>
+      <div className='two-posts'>
+        <div className='home-card'>
+          <div className='row-padded-element'>          
+            <div className='h1-custom'>The open source operating system for quantum hardware</div>
           </div>
-          <div className='card'>
-            <img src='/images/home/qibolab_draw.png' alt='/'/>
-            <p> 
-              Qibolab contains the hardware deployment procedures: every quantum 
-              programming action must be translated in a specific way for make it 
-              run on the real quantum hardware. 
-            </p>
-            <Link legacyBehavior href={`/Docs/Qibolab/last`}> 
-                <a className='btn-half'> Documentation </a>
-            </Link>
-          </div>
-          <div className='card'>
-            <img src='/images/home/qibocal_draw.png' alt='/'/>
-            <p> 
-              Qibocal is a package which provides quantum characterization, validation
-              and verification protocols using Qibo and Qibolab.
-            </p>
-            <Link legacyBehavior href={`/Docs/Qibocal/last`}> 
-                <a className='btn-half'> Documentation </a>
-            </Link>
+          <div className='row-element'>          
+            <div className='p-home'>Quantum programming, simulation, control and remote access</div>
           </div>
         </div>
-      
+        <div className='home-card'>
+          <img src='/images/home/Hero.png' alt='/'/>
+        </div>
+      </div>
       </Hero>
+
+      <div className='in-container'>
+        <div className='row-padded-element'>          
+          <div className='h1-custom'>An open quantum ecosystem</div>
+        </div>
+      </div>
+      <div className='in-container'>
+        <div className='row-element'>       
+          <div className='p-home'>Qibo is an end-to-end open source platform for quantum simulation, 
+            quantum hardware control and remote access. It has a comprehensive, 
+            flexible ecosystem of tools, libraries and community resources that 
+            lets researchers and users to quickly deploy quantum powered 
+            applications.
+          </div>
+        </div>
+      </div>
+
+      <div className='in-container'>
+        <div className='four-posts'>
+            <div className='home-card'>
+              <div className='in-container'>
+                <img src='/images/home/finances_p.png' alt='/'/>
+              </div>
+              <div className='h3-custom'> Applications </div>
+              <div className='p-home-small'> 
+                We provide an open source codebase of pre-coded quantum algorithms 
+                for applications in quantum machine learning, chemistry, industry among others.
+              </div>
+            </div>
+            <div className='home-card'>
+              <div className='in-container'>
+                <img src='/images/home/code_p.png' alt='/'/>
+              </div>
+              <div className='h3-custom'> Algorithms </div>
+              <div className='p-home-small'> 
+                We offer tutorials and code examples for quantum algorithms that
+                can be quickly modified and adapted by developers.
+              </div>
+            </div>
+            <div className='home-card'>
+              <div className='in-container'>
+                <img src='/images/home/lab_p.png' alt='/'/>
+              </div>
+              <div className='h3-custom'> Laboratory tools </div>
+              <div className='p-home-small'> 
+                We support hardware control procedures for laboratories technologies,
+                including pulses sequence generation, job submission and results recontruction.
+              </div>
+            </div>
+            <div className='home-card'>
+              <div className='in-container'>
+                <img src='/images/home/hw_p.png' alt='/'/>
+              </div>
+              <div className='h3-custom'> Open hardware </div>
+              <div className='p-home-small'> 
+                We suggest accessible hardware for quantum simulation and hardware implementation.
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <Hero>
+        <NextJsCarousel/>
+      </Hero>
+
+      <div className='in-container'>
+        <div className='row-padded-element'>          
+          <div className='h1-custom'>Open Hardware</div>
+        </div>
+      </div>
+      <div className='in-container'>
+        <div className='row-element'>       
+          <div className='p-home'>
+            Quantum simulation is a challenging task which involves the 
+            identifications of the classical resources and its limitations.
+          </div>
+        </div>
+      </div>
+      <div className='small-container'>
+        <div className='row-element'>       
+          <img src='/images/home/Hw.png' alt='/'/>
+        </div>
+      </div>
+
+      <Hero>
+        <div className='home-card'>
+          <div className='h1-custom'>
+            Develop, build and collaborate easily with Qibo!
+          </div>
+          <div className='p-home'>
+            Join Qibo and help us to build an open quantum ecosystem.
+          </div>
+        </div>
+      </Hero>
+    
       <Footer/>
 
     </div>
