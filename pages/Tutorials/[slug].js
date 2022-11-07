@@ -4,16 +4,18 @@ import matter from 'gray-matter'
 import { marked } from 'marked'
 import styled from 'styled-components'
 import DynNavbar from '../../components/DynNavbar'
+import Footer from '../../components/Footer'
 
 
 const Hero = styled.div`
-  height: 88vh;
   display: flex;
   justify-content: center;
   background: #fff;
   align-items: center;
   padding-left: 10%;
   padding-right: 10%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 `
 
 export default function PostPage({
@@ -31,6 +33,7 @@ export default function PostPage({
           </div>
         </div>
       </Hero>
+      <Footer/>
     </>
   )
 }

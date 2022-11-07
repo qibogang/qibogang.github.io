@@ -1,6 +1,6 @@
 ---
 title: 'Derivative of a circuit'
-cover_image: 'images/posts/derivative_psr.png'
+cover_image: 'images/tutorials/derivative_psr.png'
 excerpt: 'Using the parameter shift rule to calculate the derivative of a circuit.'
 ---
 

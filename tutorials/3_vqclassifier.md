@@ -1,6 +1,6 @@
 ---
 title: 'Re-uploading Classifier'
-cover_image: 'images/posts/vqclassifier.png'
+cover_image: 'images/tutorials/vqclassifier.png'
 excerpt: 'Using a variational quantum circuit for tackling classification problems'
 ---
 

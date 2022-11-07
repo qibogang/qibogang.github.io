@@ -1,6 +1,6 @@
 ---
 title: 'Getting started'
-cover_image: 'images/posts/getting-started.png'
+cover_image: 'images/tutorials/getting-started.png'
 excerpt: 'Getting started with Qibo API language.'
 ---
 
