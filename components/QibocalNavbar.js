@@ -22,7 +22,6 @@ const DropNav = () => {
         </Link>
         
         <div>
-
           <div class="dropdown">
             <button class="dropbtn">Qibocal releases</button>
               <div class="dropdown-content">

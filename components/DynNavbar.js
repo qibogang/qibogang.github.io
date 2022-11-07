@@ -3,13 +3,6 @@ import Image from "next/image";
 import React, { useState } from "react";
 
 
-function increaseFontSize(id, increaseFactor){
-     txt = document.getElementById(id);
-     style = window.getComputedStyle(txt, null).getPropertyValue('font-size');
-     currentSize = parseFloat(style);
-     txt.style.fontSize = (currentSize + increaseFactor) + 'px';
-}
-
 
 const DropNav = () => {
   const [navActive, setNavActive] = useState(null);

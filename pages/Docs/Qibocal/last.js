@@ -2,21 +2,16 @@ import Head from 'next/head'
 import styles from '../../../styles/Home.module.css'
 import styled from 'styled-components'
 import QibocalNavbar from '../../../components/QibocalNavbar'
+import Footer from '../../../components/Footer'
 
 const Hero = styled.div`
-  height: 88vh;
+  height: 94vh;
   display: flex;
   justify-content: center;
   background: #fff;
   align-items: center;
-  padding-right: 5%;
-  padding-left: 5%;
-`
-
-const Heading = styled.div`
-  color: #883b8f;
-  font-size: 60px;
-  font-weight: 800;
+  padding-right: 0;
+  padding-left: 0;
 `
 
 export default function Documentation() {
@@ -29,7 +24,6 @@ export default function Documentation() {
       </Head> 
       <QibocalNavbar />
       <Hero>
-        
         <iframe 
           //src="https://qibo.readthedocs.io/en/stable/" 
           src="/packages/qibocal/doc/build/html/index.html"
@@ -39,6 +33,7 @@ export default function Documentation() {
           frameBorder="0">
         </iframe> 
       </Hero>
+      <Footer/>
     </div>
   )
 }

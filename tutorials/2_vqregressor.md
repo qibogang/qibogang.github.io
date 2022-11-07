@@ -9,4 +9,4 @@ excerpt: 'Using a variational quantum circuit to fit one dimensional functions.'
 * goal 1
 * goal 2
 
-$$ \partial_{\mu} \braket{q_f | O | q_f} = r\bigl( f(\mu^+) - f(\mu^-)) \bigr) $$
+r$$ \partial_{\mu} \braket{q_f | O | q_f} = r\bigl( f(\mu^+) - f(\mu^-)) \bigr) $$

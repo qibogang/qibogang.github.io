@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import Post from '../components/Post'
+import Tutorial from '../components/Tutorial'
 import DynNavbar from '../components/DynNavbar'
 import Footer from '../components/Footer'
 
@@ -20,7 +20,7 @@ const Hero = styled.div`
 `
 
 
-export default function Tutorials({posts}) {
+export default function Tutorials({tutorials}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -31,8 +31,8 @@ export default function Tutorials({posts}) {
       <DynNavbar/>
        <Hero>
         <div className='posts'>
-          {posts.map((post, index) => (
-            <Post post={post} />
+          {tutorials.map((tutorial, index) => (
+            <Tutorial tutorial={tutorial} />
           ))}
         </div>
       </Hero>
@@ -44,12 +44,12 @@ export default function Tutorials({posts}) {
 
 export async function getStaticProps() {
   // get files from the posts directory
-  const files = fs.readdirSync(path.join('posts'))
+  const files = fs.readdirSync(path.join('tutorials'))
   // get slug and frontmatter
-  const posts = files.map(filename => {
+  const tutorials = files.map(filename => {
     // create the slug
     const slug = filename.replace('.md', '')
-    const markdownWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8')
+    const markdownWithMeta = fs.readFileSync(path.join('tutorials', filename), 'utf-8')
 
     const {data:frontmatter} = matter(markdownWithMeta)
 
@@ -60,7 +60,7 @@ export async function getStaticProps() {
   })
   return {
     props: {
-      posts
+      tutorials
     }
   }
 }

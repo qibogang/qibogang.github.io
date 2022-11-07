@@ -10,9 +10,12 @@ const FooterSection = styled.div`
     justify-content: space-between  ;
     align-items: center;
     font-size: 16px;
+    padding-left: 2%;
+    padding-top: 5px;
+    padding-right: 2%;
     bottom:0;
     left:0;
-    width:100%;
+    width:96%;
 `
 
 const Footer = () => {
