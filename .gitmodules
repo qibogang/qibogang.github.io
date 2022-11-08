@@ -1,0 +1,9 @@
+[submodule "public/packages/qibo"]
+	path = public/packages/qibo
+	url = https://github.com/qiboteam/qibo
+[submodule "public/packages/qibocal"]
+	path = public/packages/qibocal
+	url = https://github.com/qiboteam/qibocal
+[submodule "public/packages/qibolab"]
+	path = public/packages/qibolab
+	url = https://github.com/qiboteam/qibolab
