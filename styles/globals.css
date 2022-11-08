@@ -24,6 +24,16 @@ p {
   font-size: 18px;
 }
 
+.p-home-first {
+  margin: 15px 0;
+  line-height: 1.4;
+  width: 100%;
+  text-align: right;
+  color: #000;
+  opacity: 0.7;
+  font-size: 18px;
+}
+
 .p-home-small {
   margin: 15px 0;
   line-height: 1.4;
@@ -56,15 +66,24 @@ pfooter {
 }
 
 .h2-custom {
-  color:#6400FF;
-  opacity: 0.8;
+  color:#000000;
+  opacity: 0.7;
   font-size: 22px;
   padding-top: 5px;
   font-family: 'Arial', sans-serif;
 }
 
+.h2-partners {
+  color:#000000;
+  opacity: 0.5;
+  font-size: 18px;
+  padding-top: 10%;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
 .h3-custom {
-  color:#6400FF;
+  color: #000000;
   opacity: 0.8;
   font-size: 18px;
   font-weight: bold;
@@ -73,16 +92,18 @@ pfooter {
 
 
 .h1-first {
-  color:#6400FF;
+  color:#000000;
+  font-weight: bold;
   opacity: 0.9;
   font-size: 35px;
   padding-top: 5%;
-  text-align: left;
+  text-align: right;
   font-family: 'Arial', sans-serif;
 }
 
 .h1-custom {
-  color:#6400FF;
+  color:#000000;
+  font-weight: bold;
   opacity: 0.9;
   font-size: 35px;
   padding-top: 10%;
@@ -112,7 +133,7 @@ img {
 }
 
 header {
-  background: steelblue;
+  background: #6400FF;
   color: #fff;
   padding: 0px;
   margin-bottom: 0px;
@@ -154,8 +175,8 @@ header a {
   justify-content: center;
   padding-top: 2%;
   padding-bottom: 2%;
-  padding-right: 25%;
-  padding-left: 25%;
+  padding-right: 32%;
+  padding-left: 32%;
   font-family: 'Arial', sans-serif;
 }
 
@@ -165,8 +186,8 @@ header a {
   display: flex;
   text-align: center;
   justify-content: center;
-  padding-right: 42%;
-  padding-left: 42%;
+  padding-right: 44%;
+  padding-left: 44%;
   font-family: 'Arial', sans-serif;
 }
 
@@ -349,6 +370,15 @@ header a {
 }
 
 
+.eight-posts {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 30px;
+  margin-top: 0px;
+  width: 100%;
+}
+
+
 .blackCard {
   padding: 15px;
   margin: 0px 0;
@@ -373,6 +403,8 @@ header a {
   box-shadow: 0 0px 0px 0px #6400FF;
   font-family: 'Arial', sans-serif;
   text-align: center;
+  vertical-align: middle;
+  align-items: center;
 }
 
 .card-page {
@@ -484,6 +516,17 @@ ol {
     flex-direction: column;
   }
 
+  .eight-posts {
+    align-items: center;
+    position: relative;
+    margin-top: auto;
+    margin-bottom: 50px;
+    grid-template-columns: 1fr;
+    width: 85%;
+    padding: 5%;
+    flex-direction:column;
+  }
+
   .nav{
     display: flex;
     padding: 0px;
@@ -522,6 +565,8 @@ nav{
   align-items: center;
   background-color: #6400FF;
   margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 

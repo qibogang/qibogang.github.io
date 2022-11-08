@@ -5,8 +5,6 @@ import React, { useState } from "react";
 
 
 const DropNav = () => {
-  const [navActive, setNavActive] = useState(null);
-  const [activeIdx, setActiveIdx] = useState(-1);
 
   return (
     <header>
@@ -24,9 +22,9 @@ const DropNav = () => {
         
         <div>
 
-          <div class="dropdown">
-            <button class="dropbtn">Documentation</button>
-              <div class="dropdown-content">
+          <div className="dropdown">
+            <button className="dropbtn">Documentation</button>
+              <div className="dropdown-content">
                 <a href="/Docs/Qibo/last">Qibo</a>
                 <a href="/Docs/Qibolab/last">Qibolab</a>
                 <a href="/Docs/Qibocal/last">Qibocal</a>
@@ -42,9 +40,9 @@ const DropNav = () => {
           </Link>
           
 
-          <div class="bigdropdown">
-            <button class="bigdropbtn">Menu</button>
-              <div class="bigdropdown-content">
+          <div className="bigdropdown">
+            <button className="bigdropbtn">Menu</button>
+              <div className="bigdropdown-content">
                 <a href="/">Home</a>
                 <a href="/Tutorials">Tutorials</a>
                 <a href="/Docs/Qibo/last">Qibo</a>
