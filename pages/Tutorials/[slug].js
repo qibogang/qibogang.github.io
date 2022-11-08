@@ -27,7 +27,7 @@ export default function PostPage({
     <>
       <DynNavbar/>
       <Hero>
-        <div className='card card-page'>
+        <div className='container'>
           <div className='post-body'>
             <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
           </div>

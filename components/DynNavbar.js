@@ -13,7 +13,7 @@ const DropNav = () => {
         <Link legacyBehavior href={"/"}>
           <a>
             <Image 
-                src="/../public/qibo_logo.png" 
+                src="/qibo_logo.png" 
                 width='70'
                 height='35'
             />

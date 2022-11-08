@@ -3,7 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 
 const FooterSection = styled.div`
-    height: 40px;
+    height: 50px;
     background: #6400FF;
     color: #fff;
     display: flex;
@@ -11,7 +11,6 @@ const FooterSection = styled.div`
     align-items: center;
     font-size: 16px;
     padding-left: 2%;
-    padding-top: 5px;
     padding-right: 2%;
     bottom:0;
     left:0;

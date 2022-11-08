@@ -4,8 +4,6 @@ import React, { useState } from "react";
 
 
 const DropNav = () => {
-  const [navActive, setNavActive] = useState(null);
-  const [activeIdx, setActiveIdx] = useState(-1);
 
   return (
     <header>
@@ -14,7 +12,7 @@ const DropNav = () => {
         <Link legacyBehavior href={"/"}>
           <a>
             <Image 
-                src="/../public/qibo_logo.png" 
+                src="/qibo_logo.png" 
                 width='70'
                 height='35'
             />
