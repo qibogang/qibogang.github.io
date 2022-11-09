@@ -49,8 +49,6 @@ const Hero3 = styled.div`
   @media (max-width: 768px) {
     display: flex;
     padding-top: 140%;
-    padding-right: 100px;
-    padding-left: 100px;
   }
 `
 
