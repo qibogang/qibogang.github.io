@@ -14,6 +14,7 @@ Second, the Qibo site needs the documentation pages to be built locally.
 In order to do that, you must enter the `public/packages/qibo/doc` (and the same must be done also for Qibocal and Qibocal) folder and to run:
 
 ```bash
+cd public/packages/qibo/doc
 make html
 ```
 
