@@ -26,7 +26,7 @@ You can do this running the following line into the `qibo` (or `qibolab/cal`) fo
 pip install .[docs]
 ```
 
-Otherwise, if you install the packages with `poetry`, you will be able to run `make html` without any problem
+Otherwise, if you install the packages with `poetry`, you will be able to run `make html` without any problem.
 
 Here we are!
 As final step you have to install yarn and run the development server:
