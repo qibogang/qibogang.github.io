@@ -74,8 +74,8 @@ const CarouselHero = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 10%;
-  padding-left: 12%;
-  padding-right: 12%;
+  padding-left: 4%;
+  padding-right: 4%;
   padding-bottom: 5%;
   background-image: url("/images/home/bg-carousel.png");
   background-size: cover;

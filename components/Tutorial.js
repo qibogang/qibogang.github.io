@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function Tutorial({tutorial}) {
     return (
-        <div class='card'>
+        <div className='card'>
             <h2> {tutorial.frontmatter.title} </h2>
             <img src={tutorial.frontmatter.cover_image} alt='/' />
             <p> {tutorial.frontmatter.excerpt} </p>
