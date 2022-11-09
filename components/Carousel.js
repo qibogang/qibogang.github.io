@@ -8,13 +8,13 @@ export default class NextJsCarousel extends Component {
         return (
 
             <div className='in-container'>
-              <div className='h1-custom'>Built for</div>
+              <div className='h1-carousel'>Built for</div>
               
               <Carousel showThumbs={false}>
 
                   <div className='in-container'>
-                      <div className='h2-custom'> Users </div>
                     <div className='home-card'>
+                      <div className='h2-custom'> Users </div>
                       <div className='small-container'>
                         <img src='/images/home/USE.png' alt='/'/>
                       </div>
@@ -54,8 +54,8 @@ export default class NextJsCarousel extends Component {
                   
 
                   <div className='in-container'>
-                      <div className='h2-custom'> Developers </div>
                     <div className='home-card'>
+                      <div className='h2-custom'> Developers </div>
                       <div className='small-container'>
                         <img src='/images/home/DEV.png' alt='/'/>
                       </div>
@@ -102,8 +102,8 @@ export default class NextJsCarousel extends Component {
                   </div>
 
                 <div className='in-container'>
-                      <div className='h2-custom'> Laboratories </div>
                     <div className='home-card'>
+                      <div className='h2-custom'> Laboratories </div>
                       <div className='small-container'>
                         <img src='/images/home/LAB.png' alt='/'/>
                       </div>

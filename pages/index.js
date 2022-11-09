@@ -21,6 +21,10 @@ const Hero = styled.div`
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: relative;
+  
+  @media (max-width: 768px) {
+    padding-bottom: 100px;
+  }
 `
 
 const Hero2 = styled.div`
@@ -42,13 +46,11 @@ const Hero3 = styled.div`
   background-repeat: no-repeat;
   background-attachment: relative;
 
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     display: flex;
-    padding-top: 120%;
-    padding-bottom: 200px;
+    padding-top: 140%;
     padding-right: 100px;
     padding-left: 100px;
-
   }
 `
 
@@ -56,7 +58,7 @@ const HeroFinal = styled.div`
   height: 58vh;
   padding-left: 10%;
   padding-right: 10%;
-  padding-top: 20%;
+  padding-top: 10%;
   background-image: url("/images/home/bg-final.png");
   background-size: cover;
   background-position: center center;
@@ -69,13 +71,13 @@ const HeroFinal = styled.div`
 `
 
 const CarouselHero = styled.div`
-  height: 98vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10%;
-  padding-left: 4%;
-  padding-right: 4%;
+  padding-top: 5%;
+  padding-left: 0%;
+  padding-right: 0%;
   padding-bottom: 5%;
   background-image: url("/images/home/bg-carousel.png");
   background-size: cover;
@@ -144,7 +146,7 @@ export default function Home() {
       <div className='in-container'>
         <div className='four-posts'>
             <div className='home-card'>
-              <div className='in-container'>
+              <div className='img-container'>
                 <img src='/images/home/finances_p.png' alt='/'/>
               </div>
               <div className='h3-custom'> Applications </div>
@@ -154,7 +156,7 @@ export default function Home() {
               </div>
             </div>
             <div className='home-card'>
-              <div className='in-container'>
+              <div className='img-container'>
                 <img src='/images/home/code_p.png' alt='/'/>
               </div>
               <div className='h3-custom'> Algorithms </div>
@@ -164,7 +166,7 @@ export default function Home() {
               </div>
             </div>
             <div className='home-card'>
-              <div className='in-container'>
+              <div className='img-container'>
                 <img src='/images/home/lab_p.png' alt='/'/>
               </div>
               <div className='h3-custom'> Laboratory tools </div>
@@ -174,7 +176,7 @@ export default function Home() {
               </div>
             </div>
             <div className='home-card'>
-              <div className='in-container'>
+              <div className='img-container'>
                 <img src='/images/home/hw_p.png' alt='/'/>
               </div>
               <div className='h3-custom'> Open hardware </div>
