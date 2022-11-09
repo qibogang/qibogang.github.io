@@ -74,8 +74,8 @@ const CarouselHero = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 10%;
-  padding-left: 0%;
-  padding-right: 0%;
+  padding-left: 12%;
+  padding-right: 12%;
   padding-bottom: 5%;
   background-image: url("/images/home/bg-carousel.png");
   background-size: cover;
@@ -87,8 +87,8 @@ const CarouselHero = styled.div`
     display: flex;
     padding-top: 200px;
     padding-bottom: 200px;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-left: 12%;
+    padding-right: 12%;
 
   }
 `

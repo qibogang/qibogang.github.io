@@ -10,7 +10,7 @@ export default class NextJsCarousel extends Component {
             <div className='in-container'>
               <div className='h1-custom'>Built for</div>
               
-              <Carousel>
+              <Carousel showThumbs={false}>
 
                   <div className='in-container'>
                       <div className='h2-custom'> Users </div>
