@@ -33,6 +33,7 @@ Here we are!
 As final step you have to install yarn and run the development server:
 
 ```bash
+npm install --global yarn
 yarn install
 yarn dev
 ```
