@@ -20,7 +20,7 @@ make html
 This command will build the `index.html` file representing the qibo documentation.
 Note that, for doing this, you need to be into an environment in which you have installed `sphinx` properly.
 If you install the packages using `pip` it is important to add the flag which activate the documentation packages.
-You can do this running the following line into the `qibo` (or `qibollab/cal`) folder:
+You can do this running the following line into the `qibo` (or `qibolab/cal`) folder:
 
 ```bash
 pip install .[docs]
