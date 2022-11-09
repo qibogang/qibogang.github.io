@@ -24,7 +24,7 @@ const Footer = () => {
           <Link legacyBehavior href={'https://github.com/qiboteam/qibo'}>
             <a className="btn">
               <Image 
-                src="/../public/github_logo.png" 
+                src="/github_logo.png" 
                 width='40'
                 height='30'
               />
