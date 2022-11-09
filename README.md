@@ -11,7 +11,7 @@ git clone https://github.com/qibogang/qibogang.github.io.git
 ```
 
 Second, the Qibo site needs the documentation pages to be built locally. 
-In order to do that, you must enter the `qibo/doc` (and the same must be done also for Qibocal and Qibocal) folder and to run:
+In order to do that, you must enter the `public/packages/qibo/doc` (and the same must be done also for Qibocal and Qibocal) folder and to run:
 
 ```bash
 make html
