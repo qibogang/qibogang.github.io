@@ -7,7 +7,7 @@ It is an experimental repo, created to familiarize with `nextjs`, `javascript` a
 First, you need to clone this repo locally. For doing this, enter in the location in which you want the Qibo site folder and digit: 
 
 ```bash
-git clone https://github.com/qibogang/qibogang.github.io.git
+git clone https://github.com/qibogang/qibogang.github.io.git --recurse-submodules
 ```
 
 Second, the Qibo site needs the documentation pages to be built locally. 
