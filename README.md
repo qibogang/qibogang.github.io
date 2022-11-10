@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 It is an experimental repo, created to familiarize with `nextjs`, `javascript` and `react`.
 
-## How to run the site in developement mode
+## How to run the site in development mode
 
 First, you need to clone this repo locally. For doing this, enter in the location in which you want the Qibo site folder and digit: 
 
