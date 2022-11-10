@@ -27,7 +27,7 @@ git submodules update
 ##### Follow `INSTALL.md` instructions now
 
 The next step is to install some more packages. 
-Please follow the [installation istructions]("https://github.com/qibogang/qibogang.github.io/blob/installation_istructions/INSTALL.md").
+Please follow the [installation istructions](https://github.com/qibogang/qibogang.github.io/blob/installation_istructions/INSTALL.md).
 
 
 ##### Run the site in developement mode!
