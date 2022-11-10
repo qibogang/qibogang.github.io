@@ -1,40 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is the Qibo's website repository.
+Here we describe its contents and show you how to run the site in developement mode, in order to collaborate with us.
 
-It is an experimental repo, created to familiarize with `nextjs`, `javascript` and `react`.
 
-## How to run the site in developement mode
+## How to open the site in developement mode
 
 First, you need to clone this repo locally. For doing this, enter in the location in which you want the Qibo site folder and digit: 
 
 ```bash
-git clone https://github.com/qibogang/qibogang.github.io.git --recurse-submodules
+git clone https://github.com/qibogang/qibogang.github.io.git
 ```
 
-Second, the Qibo site needs the documentation pages to be built locally. 
-In order to do that, you must enter the `public/packages/qibo/doc` (and the same must be done also for Qibocal and Qibocal) folder and to run:
+#### The qibo site needs qibo, qibolab and qibocal
+
+This repo uses other three repos to properly build the documentations. We need to 
+get the correct `submodules` in order to do that. After having cloned the repo, follow these
+instructions:
 
 ```bash
-cd qibogang.github.io/public/packages/qibo/doc
-make html
+cd qibogang.github.io
+git submodules init
+git submodules update
 ```
 
-This command will build the `index.html` file representing the qibo documentation.
-Note that, for doing this, you need to be into an environment in which you have installed `sphinx` properly.
-If you install the packages using `pip` it is important to add the flag which activate the documentation packages.
-You can do this running the following line into the `qibo` (or `qibolab/cal`) folder:
+#### Follow `INSTALL.md` instructions now
+
+The next step is to install some more packages. 
+Please follow the [installation istructions]("./INSTALL.md").
+
+
+#### Run the site in developement mode!
+
+Here we are! After all the dependences are ready, you can run the developement mode:
 
 ```bash
-pip install .[docs]
-```
-
-Otherwise, if you install the packages with `poetry`, you will be able to run `make html` without any problem.
-
-Here we are!
-As final step you have to install yarn and run the development server:
-
-```bash
-npm install --global yarn
-yarn install
 yarn dev
 ```
 
