@@ -57,7 +57,3 @@ Into this repo you will find some folders:
 - `tutorials` contains some markdowns corresponding to the tutorials presented to the user. Each tutorial is saved into a proper `.md` file.
 - `styles` contains two `*.css` files in which we wrote some styling instructions for the site building.
 
-### Required packages to compile it in dev mode
-
-Please check the "dependencies" section in `package.json` file to be sure that you
-have all the yarn extensions in order to run the developer mode.

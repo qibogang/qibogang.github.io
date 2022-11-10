@@ -93,3 +93,8 @@ If all is right, you must now have a folder called `build`, into `qibocal/doc`.
 
 We developed the site using `yarn` as dependence. You can install it following the
 [official instructions](https://yarnpkg.com/getting-started/install).
+
+###### Required packages to compile it in dev mode
+
+Please check the "dependencies" section in `package.json` file to be sure that you
+have all the yarn extensions in order to run the developer mode.
