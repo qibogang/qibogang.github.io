@@ -1,8 +1,10 @@
+# Qibo site instructions
+
 This is the Qibo's website repository.
 Here we describe its contents and show you how to run the site in developement mode, in order to collaborate with us.
 
 
-## How to open the site in developement mode
+### How to open the site in developement mode
 
 First, you need to clone this repo locally. For doing this, enter in the location in which you want the Qibo site folder and digit: 
 
@@ -10,7 +12,7 @@ First, you need to clone this repo locally. For doing this, enter in the locatio
 git clone https://github.com/qibogang/qibogang.github.io.git
 ```
 
-#### The qibo site needs qibo, qibolab and qibocal
+##### The qibo site needs qibo, qibolab and qibocal
 
 This repo uses other three repos to properly build the documentations. We need to 
 get the correct `submodules` in order to do that. After having cloned the repo, follow these
@@ -22,13 +24,13 @@ git submodules init
 git submodules update
 ```
 
-#### Follow `INSTALL.md` instructions now
+##### Follow `INSTALL.md` instructions now
 
 The next step is to install some more packages. 
 Please follow the [installation istructions]("./INSTALL.md").
 
 
-#### Run the site in developement mode!
+##### Run the site in developement mode!
 
 Here we are! After all the dependences are ready, you can run the developement mode:
 
@@ -45,7 +47,7 @@ You can start editing the page by modifying `pages/index.js` (we talk about `ind
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 
-## Repo's structure
+### Repo's structure
 
 Into this repo you will find some folders:
 
@@ -55,7 +57,7 @@ Into this repo you will find some folders:
 - `tutorials` contains some markdowns corresponding to the tutorials presented to the user. Each tutorial is saved into a proper `.md` file.
 - `styles` contains two `*.css` files in which we wrote some styling instructions for the site building.
 
-## Required packages to compile it in dev mode
+### Required packages to compile it in dev mode
 
 Please check the "dependencies" section in `package.json` file to be sure that you
 have all the yarn extensions in order to run the developer mode.
