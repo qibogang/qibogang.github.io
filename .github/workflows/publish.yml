@@ -38,6 +38,7 @@ jobs:
           python -m pip install --upgrade pip
           pwd #TODO:delete 
           ls -a #TODO:delete 
+          ls -a public/packages
           cd public/packages/qibo/doc
           pip install .[docs]
           sudo apt install pandoc
