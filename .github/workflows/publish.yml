@@ -20,6 +20,30 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  qibo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          clean: False
+    
+      - name: Clone qibo repository
+        uses: actions/checkout@v2
+        with:
+          repository: qiboteam/qibo
+          path: public/packages/
+
+      - name: Deploy documentation
+        run: |
+          which virtualenv
+          virtualenv my-sphinx-env
+          source my-sphinx-env/bin/activate
+          pip install .[docs]
+          sudo apt install pandoc
+          pip install -U sphinx
+          pip install -U --pre sphinx
+          cd ./public/packages/qibo/doc
+          make html
   # Build job
   build:
     runs-on: ubuntu-latest
