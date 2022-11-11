@@ -51,7 +51,7 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
-      
+      - run: ls -a public/packages #TODO delete
       - name: Clone qibo repository
         uses: actions/checkout@v2
         with:
