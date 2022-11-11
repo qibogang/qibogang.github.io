@@ -38,7 +38,7 @@ jobs:
           python -m pip install --upgrade pip
           pwd #TODO:delete 
           ls -a #TODO:delete 
-          cd ./public/packages/qibo/doc
+          cd public/packages/qibo/doc
           pip install .[docs]
           sudo apt install pandoc
           make html
