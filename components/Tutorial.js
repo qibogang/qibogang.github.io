@@ -7,7 +7,7 @@ export default function Tutorial({tutorial}) {
             <h2> {tutorial.frontmatter.title} </h2>
             <img src={tutorial.frontmatter.cover_image} alt='/' />
             <p> {tutorial.frontmatter.excerpt} </p>
-            <Link legacyBehavior href={`/Tutorials/${tutorial.slug}`}> 
+            <Link legacyBehavior href={`/tutorials/${tutorial.slug}`}> 
                 <a className='btn-half'> Read more </a>
             </Link>
         </div>
