@@ -13079,6 +13079,19 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Parameter-Shift-Rule-for-Rotation-gates">Parameter-Shift Rule for Rotation gates<a class="anchor-link" href="#Parameter-Shift-Rule-for-Rotation-gates">&#182;</a></h2><p>In this tutorial we use the Parameter Shift Rule (PSR) [1, 2] for evaluating the gradients of a variational quantum circuit with respect a variational parameter.</p>
+<h4 id="The-parameter-shift-rule-in-a-nutshell">The parameter shift rule in a nutshell<a class="anchor-link" href="#The-parameter-shift-rule-in-a-nutshell">&#182;</a></h4><p>Let's consider a parametrized circuit $\mathcal{U}(\vec{\theta})$, in which we build up an unitary gate of the form:</p>
+$$ \mathcal{G} = \exp \bigl[-i\mu G \bigr] $$<p>which has at most two eigenvalues $\pm r$. Let's consider an observable $B$ and, finally, let $|q_f \rangle$ be the state we obtain by applying $\mathcal{U}$ to $|0\rangle$.
+We are interested in evaluating the gradients of the following expression:</p>
+$$ f(\mu) \equiv \langle q_f | B | q_f \rangle, $$<p>where we specify that $f$ depends directly on the parameter $\mu$. We are interested in this result because the expectation value of $B$ is typically involved in computing predictions in quantum machine learning problems. The PSR allows us to calculate the derivative of $f(\mu)$ with respect to a evaluating $f$ twice more:</p>
+$$ \partial_{\mu} = \frac{1}{r} \bigl( f(\mu^+) - f(\mu^-) \bigr), $$<p>where $\mu^{\pm} = \mu \pm s$ and $s = \pi / 4r$. Finally, if we pick $G$ from the rotations generators we can use $s=\pi/2$ and $r=1/2$.</p>
+<h4 id="Loading-required-features">Loading required features<a class="anchor-link" href="#Loading-required-features">&#182;</a></h4>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
@@ -13097,9 +13110,17 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we have can write a <code>parameter_shift</code> function, in which we take into account an hamiltonian (which is our $B$ observable), the index which identify the target variational parameter, the initial state of the circuit and the wigenvalues of the target observable.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
@@ -13107,94 +13128,7 @@ div#notebook {
 <span class="k">def</span> <span class="nf">parameter_shift</span><span class="p">(</span>
     <span class="n">circuit</span><span class="p">,</span> <span class="n">hamiltonian</span><span class="p">,</span> <span class="n">parameter_index</span><span class="p">,</span> <span class="n">generator_eigenval</span><span class="p">,</span> <span class="n">initial_state</span><span class="o">=</span><span class="kc">None</span>
 <span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;In this method the parameter shift rule (PSR) is implemented.</span>
-<span class="sd">    Given a circuit U and an observable H, the PSR allows to calculate the derivative</span>
-<span class="sd">    of the expected value of H on the final state with respect to a variational parameter of the circuit.</span>
-
-<span class="sd">    Original references:</span>
-<span class="sd">        `https://arxiv.org/abs/1811.11184`;</span>
-<span class="sd">        `https://arxiv.org/abs/1803.00745`.</span>
-
-<span class="sd">    Args:</span>
-<span class="sd">        circuit (:class:`qibo.models.circuit.Circuit`): custom quantum circuit.</span>
-<span class="sd">        observable (:class: `qibo.hamiltonians.Hamiltonian`): target observable.</span>
-<span class="sd">        parameter_index (int): the index which identifies the target parameter in the circuit.get_parameters() list</span>
-<span class="sd">        gate_eigenv (float): abs(eigenvalue) of H. In case of Pauli 1/2{sigmas} observable r = 0.5</span>
-<span class="sd">        initial_state ((1, 2**nqubits) matrix): initial state on which we act with the circuit.</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        np.float value of the derivative of the expected value of H on the final state obtained applying U</span>
-<span class="sd">        to the initial state with respect to the target variational parameter.</span>
-
-<span class="sd">    Example:</span>
-<span class="sd">        .. testcode::</span>
-
-<span class="sd">            import qibo</span>
-<span class="sd">            import numpy as np</span>
-<span class="sd">            from qibo import hamiltonians, gates</span>
-<span class="sd">            from qibo.models import Circuit</span>
-
-<span class="sd">            # in order to see the difference with tf gradients</span>
-<span class="sd">            import tensorflow as tf</span>
-<span class="sd">            qibo.set_backend(&#39;tensorflow&#39;)</span>
-
-<span class="sd">            # defining an observable</span>
-<span class="sd">            def hamiltonian(nqubits = 1):</span>
-<span class="sd">                m0 = (1/nqubits)*hamiltonians.Z(nqubits).matrix</span>
-<span class="sd">                ham = hamiltonians.Hamiltonian(nqubits, m0)</span>
-<span class="sd">                return ham</span>
-
-<span class="sd">            # defining a dummy circuit</span>
-<span class="sd">            def circuit(nqubits = 1):</span>
-<span class="sd">                c = Circuit(nqubits = 1)</span>
-<span class="sd">                c.add(gates.RY(q = 0, theta = 0))</span>
-<span class="sd">                c.add(gates.RX(q = 0, theta = 0))</span>
-<span class="sd">                c.add(gates.M(0))</span>
-<span class="sd">                return c</span>
-
-<span class="sd">            # using GradientTape to benchmark</span>
-<span class="sd">            def gradient_tape(params):</span>
-<span class="sd">                params = tf.Variable(params)</span>
-
-<span class="sd">                with tf.GradientTape() as tape:</span>
-<span class="sd">                    c = circuit(nqubits = 1)</span>
-<span class="sd">                    c.set_parameters(params)</span>
-<span class="sd">                    h = hamiltonian()</span>
-<span class="sd">                    expected_value = h.expectation(c.execute().state())</span>
-
-<span class="sd">                grads = tape.gradient(expected_value, [params])</span>
-<span class="sd">                return grads</span>
-
-<span class="sd">            # initializing the circuit</span>
-<span class="sd">            c = circuit(nqubits = 1)</span>
-
-<span class="sd">            # some parameters</span>
-<span class="sd">            test_params = np.random.randn(2)</span>
-<span class="sd">            c.set_parameters(test_params)</span>
-
-<span class="sd">            # a test hamiltonian</span>
-<span class="sd">            test_hamiltonian = hamiltonian()</span>
-
-<span class="sd">            # running the psr with respect to the two parameters</span>
-<span class="sd">            grad_0 = parameter_shift(circuit = c, observable = test_hamiltonian, parameter_index = 0, gate_eigenv = 0.5)</span>
-<span class="sd">            grad_1 = parameter_shift(circuit = c, observable = test_hamiltonian, parameter_index = 1, gate_eigenv = 0.5)</span>
-
-<span class="sd">            # evaluating the gradients using tensorflow</span>
-<span class="sd">            tf_grads = gradient_tape(test_params)</span>
-
-<span class="sd">            print(&#39;Test gradient with respect params[0] with PSR: &#39;, grad_0.numpy())</span>
-<span class="sd">            print(&#39;Test gradient with respect params[0] with tf:  &#39;, tf_grads[0][0].numpy())</span>
-<span class="sd">            print(&#39;Test gradient with respect params[1] with PSR: &#39;, grad_1.numpy())</span>
-<span class="sd">            print(&#39;Test gradient with respect params[1] with tf:  &#39;, tf_grads[0][1].numpy())</span>
-
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="k">if</span> <span class="n">parameter_index</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">circuit</span><span class="o">.</span><span class="n">get_parameters</span><span class="p">()):</span>
-        <span class="n">raise_error</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="s2">&quot;&quot;&quot;This index is out of bounds.&quot;&quot;&quot;</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">hamiltonian</span><span class="p">,</span> <span class="n">AbstractHamiltonian</span><span class="p">):</span>
-        <span class="n">raise_error</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="s1">&#39;hamiltonian must be a qibo.hamiltonians.Hamiltonian or qibo.hamiltonians.SymbolicHamiltonian object&#39;</span><span class="p">)</span>
-
+    
     <span class="c1"># inheriting hamiltonian&#39;s backend</span>
     <span class="n">backend</span> <span class="o">=</span> <span class="n">hamiltonian</span><span class="o">.</span><span class="n">backend</span>
         
@@ -13228,16 +13162,62 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we have a <code>parameter_shift</code> function and we can use it for calculating the gradients of the expected value of $H$ on the final state with respect to $\mu$. In order to check the results, we compare them with the same variables evaluated using the <code>GradientTape()</code> module of <code>tensorflow</code>.</p>
+<p>For doing this, we need to load <code>tensorflow</code> and to activate the appropriate <code>qibo</code>'s backend.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># in order to see the difference with tf gradients</span>
 <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
 <span class="n">qibo</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s1">&#39;tensorflow&#39;</span><span class="p">)</span>
+</pre></div>
 
-<span class="c1"># defining an observable</span>
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>[Qibo 0.1.8|INFO|2022-11-11 16:19:53]: Using tensorflow backend on /device:CPU:0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we can define the hamiltonian (in this case we use a Pauli Z as observable) and a parametrized circuit.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># defining an observable</span>
 <span class="k">def</span> <span class="nf">hamiltonian</span><span class="p">(</span><span class="n">nqubits</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
     <span class="n">m0</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">nqubits</span><span class="p">)</span><span class="o">*</span><span class="n">hamiltonians</span><span class="o">.</span><span class="n">Z</span><span class="p">(</span><span class="n">nqubits</span><span class="p">)</span><span class="o">.</span><span class="n">matrix</span>
     <span class="n">ham</span> <span class="o">=</span> <span class="n">hamiltonians</span><span class="o">.</span><span class="n">Hamiltonian</span><span class="p">(</span><span class="n">nqubits</span><span class="p">,</span> <span class="n">m0</span><span class="p">)</span>
@@ -13250,8 +13230,62 @@ div#notebook {
     <span class="n">c</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">gates</span><span class="o">.</span><span class="n">RX</span><span class="p">(</span><span class="n">q</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">theta</span> <span class="o">=</span> <span class="mi">0</span><span class="p">))</span>
     <span class="n">c</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">gates</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">c</span>
+</pre></div>
 
-<span class="c1"># using GradientTape to benchmark</span>
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># drawing the circuit</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">circuit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;q0: ─RY─RX─M─&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is the momento to write a function which returns the <code>tensorflow</code> values of the gradients.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># using GradientTape to benchmark</span>
 <span class="k">def</span> <span class="nf">gradient_tape</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
     <span class="n">params</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
     
@@ -13263,15 +13297,51 @@ div#notebook {
     
     <span class="n">grads</span> <span class="o">=</span> <span class="n">tape</span><span class="o">.</span><span class="n">gradient</span><span class="p">(</span><span class="n">expected_value</span><span class="p">,</span> <span class="p">[</span><span class="n">params</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">grads</span>
+</pre></div>
 
-<span class="c1"># initializing the circuit</span>
-<span class="n">c</span> <span class="o">=</span> <span class="n">circuit</span><span class="p">(</span><span class="n">nqubits</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+    </div>
+</div>
+</div>
 
-<span class="c1"># some parameters</span>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In order to check the difference, we randomly generate some parameters and we impose them as variational parameters of the circuit.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># some parameters</span>
 <span class="n">test_params</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">c</span><span class="o">.</span><span class="n">set_parameters</span><span class="p">(</span><span class="n">test_params</span><span class="p">)</span>
+</pre></div>
 
-<span class="n">test_hamiltonian</span> <span class="o">=</span> <span class="n">hamiltonian</span><span class="p">()</span>
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here we are!</p>
+<p>Now we can calculate the gradients using the two methods.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_hamiltonian</span> <span class="o">=</span> <span class="n">hamiltonian</span><span class="p">()</span>
 
 <span class="c1"># running the psr with respect to the two parameters</span>
 <span class="n">grad_0</span> <span class="o">=</span> <span class="n">parameter_shift</span><span class="p">(</span><span class="n">circuit</span> <span class="o">=</span> <span class="n">c</span><span class="p">,</span> <span class="n">hamiltonian</span> <span class="o">=</span> <span class="n">test_hamiltonian</span><span class="p">,</span> <span class="n">parameter_index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">generator_eigenval</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
@@ -13298,22 +13368,11 @@ div#notebook {
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>[Qibo 0.1.8|INFO|2022-10-24 14:46:15]: Using tensorflow backend on /device:CPU:0
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Test gradient with respect params[0] with PSR:  0.5379036403446502
-Test gradient with respect params[0] with tf:   0.5379036403446502
-Test gradient with respect params[0] with PSR:  0.330061454113827
-Test gradient with respect params[0] with tf:   0.33006145411382704
+<pre>Test gradient with respect params[0] with PSR:  -0.18504202639565628
+Test gradient with respect params[0] with tf:   -0.1850420263956563
+Test gradient with respect params[0] with PSR:  0.09410349638804433
+Test gradient with respect params[0] with tf:   0.09410349638804441
 </pre>
 </div>
 </div>
@@ -13322,31 +13381,13 @@ Test gradient with respect params[0] with tf:   0.33006145411382704
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you can see, the values are identical!</p>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
 </div>
-</div>
-
 </div>
     </div>
   </div>
