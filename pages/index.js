@@ -249,7 +249,6 @@ export default function Home() {
           </div>
         </div>
       </Hero3>
-
     
       <Footer/>
 
