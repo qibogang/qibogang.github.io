@@ -63,7 +63,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           ls -a #TODO: remove
-          cd public/packages
+          cd public/packages/qibo
           ls -a #TODO: remove 
           pip install .[docs]
           sudo apt install pandoc
