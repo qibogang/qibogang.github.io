@@ -20,33 +20,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  qibo:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          clean: False
-    
-      - name: Clone qibo repository
-        uses: actions/checkout@v2
-        with:
-          repository: qiboteam/qibo
-          path: public/packages/
-
-      - name: Deploy documentation
-        run: |
-          python -m pip install --upgrade pip
-          pwd #TODO:delete 
-          ls -a #TODO:delete 
-          ls -a public/packages
-          cd public/packages/qibo/doc
-          pip install .[docs]
-          sudo apt install pandoc
-          make html
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./out
   # Build job
   build:
     runs-on: ubuntu-latest
