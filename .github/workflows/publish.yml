@@ -36,9 +36,9 @@ jobs:
       - name: Deploy documentation
         run: |
           python -m pip install --upgrade pip
+          cd ./public/packages/qibo/doc
           pip install .[docs]
           sudo apt install pandoc
-          cd ./public/packages/qibo/doc
           make html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
