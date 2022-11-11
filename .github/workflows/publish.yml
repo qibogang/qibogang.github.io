@@ -62,7 +62,7 @@ jobs:
       - name: Deploy documentation
         run: |
           python -m pip install --upgrade pip
-          ls -a #TODO: remove
+          ls -a public/packages #TODO: remove
           cd public/packages/qibo
           ls -a #TODO: remove 
           pip install .[docs]
