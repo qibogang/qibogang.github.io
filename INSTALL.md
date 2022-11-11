@@ -14,11 +14,8 @@ Let's check if you have correctly installed `virtualenv` by running:
 which virtualenv
 ```
 
-If yes, you will read its path location on the terminal. If not, you can install it following:
-
-```bash
-pip install virtualenv
-```
+If yes, you will read its path location on the terminal. If not, you can install it following
+the [official instructions](https://virtualenv.pypa.io/en/latest/installation.html).
 
 Now we create an environment that we will use for building the docs using the following command:
 

@@ -6,11 +6,7 @@ Here we describe its contents and show you how to run the site in developement m
 
 ### How to open the site in developement mode
 
-First, you need to clone this repo locally. For doing this, enter in the location in which you want the Qibo site folder and digit: 
-
-```bash
-git clone https://github.com/qibogang/qibogang.github.io.git
-```
+First, you need to clone this repo locally. 
 
 ##### The qibo site needs qibo, qibolab and qibocal
 
