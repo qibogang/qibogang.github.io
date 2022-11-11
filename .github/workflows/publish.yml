@@ -59,30 +59,18 @@ jobs:
           clean: False
           path: public/packages/qibo
 
-      - name: Deploy documentation
+      - name: Deploy qibo documentation
         run: |
           python -m pip install --upgrade pip
           ls -a public/packages #TODO: remove
+          ls -a public/packages/qibo #TODO: remove
+          ls -a public/packages/qibocal  #TODO: remove
           cd public/packages/qibo
-          ls -a #TODO: remove 
           pip install .[docs]
           sudo apt install pandoc
           cd doc
           make html
-      - name: Clone qibocal repository
-        uses: actions/checkout@v2
-        with:
-          repository: qiboteam/qibocal
-          clean: False
-          path: public/packages/qibocal
-
-      - name: Deploy documentation
-        run: |
-          cd public/packages/qibocal
-          ls -a #TODO: remove 
-          pip install .[docs]
-          cd doc
-          make html
+      
       - name: Install dependencies
         run: yarn install
       - name: Build with Next.js
