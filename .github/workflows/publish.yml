@@ -35,15 +35,15 @@ jobs:
 
       - name: Deploy documentation
         run: |
-          which virtualenv
-          virtualenv my-sphinx-env
-          source my-sphinx-env/bin/activate
+          python -m pip install --upgrade pip
           pip install .[docs]
           sudo apt install pandoc
-          pip install -U sphinx
-          pip install -U --pre sphinx
           cd ./public/packages/qibo/doc
           make html
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./out
   # Build job
   build:
     runs-on: ubuntu-latest
