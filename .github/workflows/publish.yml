@@ -57,7 +57,7 @@ jobs:
         with:
           repository: qiboteam/qibo
           clean: False
-          path: public/packages/
+          path: public/packages/qibo
 
       - name: Deploy documentation
         run: |
