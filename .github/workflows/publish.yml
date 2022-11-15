@@ -81,6 +81,8 @@ jobs:
         run: |
           rm public/packages/qibocal/src/qibocal/web/static/styles.css # TODO: change file in a PR
           ln -s public/packages/qibocal/src/qibocal/web/static/styles.css styles.css # TODO: change file in a PR
+          ln -s public/packages/qibocal/src/qibocal/web/static/styles.css styles.css # TODO: change file in a PR
+          ln styles/styles.css
           cd public/packages/qibocal
           pip install .[docs]
           cd doc
