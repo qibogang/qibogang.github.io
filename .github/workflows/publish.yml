@@ -80,8 +80,8 @@ jobs:
       - name: Deploy qibocal documentation
         run: |
           rm public/packages/qibocal/src/qibocal/web/static/styles.css # TODO: change file in a PR
-          ln -s public/packages/qibocal/src/qibocal/web/static/styles.css styles.css # TODO: change file in a PR
-          ln -s public/packages/qibocal/src/qibocal/web/static/styles.css styles.css # TODO: change file in a PR
+          #ln -s public/packages/qibocal/src/qibocal/web/static/styles.css styles.css # TODO: change file in a PR
+          #ln -s public/packages/qibocal/src/qibocal/web/static/styles.css styles.css # TODO: change file in a PR
           ls styles #TODO: remove
           cd public/packages/qibocal
           pip install .[docs]
