@@ -16,8 +16,8 @@ instructions:
 
 ```bash
 cd qibogang.github.io
-git submodules init
-git submodules update
+git submodule init
+git submodule update
 ```
 
 ##### Follow `INSTALL.md` instructions now
