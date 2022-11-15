@@ -66,14 +66,25 @@ jobs:
           ls -a public/packages/qibo #TODO: remove
           ls -a public/packages/qibocal  #TODO: remove
           ls -a public/packages/qibocal/serverscripts/web/  #TODO: remove
-          rm public/packages/qibocal/src/qibocal/web/static/styles.css 
-          ln -s public/packages/qibocal/src/qibocal/web/static/styles.css styles.css # TODO: change file in a PR
           cd public/packages/qibo
           pip install .[docs]
           sudo apt install pandoc
           cd doc
           make html
-      
+      - name: Clone qibocal repository
+        uses: actions/checkout@v2
+        with:
+          repository: qiboteam/qibocal
+          clean: False
+          path: public/packages/qibocal
+      - name: Deploy qibocal documentation
+        run: |
+          rm public/packages/qibocal/src/qibocal/web/static/styles.css # TODO: change file in a PR
+          ln -s public/packages/qibocal/src/qibocal/web/static/styles.css styles.css # TODO: change file in a PR
+          cd public/packages/qibocal
+          pip install .[docs]
+          cd doc
+          make html
       - name: Install dependencies
         run: yarn install
       - name: Build with Next.js
