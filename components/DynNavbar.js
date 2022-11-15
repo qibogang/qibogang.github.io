@@ -25,13 +25,13 @@ const DropNav = () => {
           <div className="dropdown">
             <button className="dropbtn">Documentation</button>
               <div className="dropdown-content">
-                <a href="/Docs/Qibo/last">Qibo</a>
-                <a href="/Docs/Qibolab/last">Qibolab</a>
-                <a href="/Docs/Qibocal/last">Qibocal</a>
+                <a href="/docs/qibo/last">Qibo</a>
+                <a href="/docs/qibolab/last">Qibolab</a>
+                <a href="/docs/qibocal/last">Qibocal</a>
               </div>
           </div> 
           
-          <Link legacyBehavior href={'/Tutorials'}>
+          <Link legacyBehavior href={'/tutorials'}>
             <a className='btn'> Tutorials </a>
           </Link>
 
@@ -44,10 +44,10 @@ const DropNav = () => {
             <button className="bigdropbtn">Menu</button>
               <div className="bigdropdown-content">
                 <a href="/">Home</a>
-                <a href="/Tutorials">Tutorials</a>
-                <a href="/Docs/Qibo/last">Qibo</a>
-                <a href="/Docs/Qibolab/last">Qibolab</a>
-                <a href="/Docs/Qibocal/last">Qibocal</a>
+                <a href="/tutorials">Tutorials</a>
+                <a href="/docs/qibo/last">Qibo</a>
+                <a href="/docs/qibolab/last">Qibolab</a>
+                <a href="/docs/qibocal/last">Qibocal</a>
               </div>
           </div> 
         </div>

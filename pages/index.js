@@ -203,7 +203,7 @@ export default function Home() {
               <div className='small-container'>
                 <img src='/images/home/doc_image.png' alt='/'/>
               </div>
-              <Link legacyBehavior href={`/Docs/Qibo/last`}> 
+              <Link legacyBehavior href={`/docs/qibo/last`}> 
                 <a className='btn-half'> Read the docs </a>
               </Link>
             </div>
@@ -212,7 +212,7 @@ export default function Home() {
               <div className='small-container'>
                 <img src='/images/home/tutorial-image.png' alt='/'/>
               </div>
-              <Link legacyBehavior href={`/Tutorials`}> 
+              <Link legacyBehavior href={`/tutorials`}> 
                 <a className='btn-half'> Hands on tutorials </a>
               </Link>
             </div>  
