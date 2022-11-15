@@ -66,6 +66,7 @@ jobs:
           ls -a public/packages/qibo #TODO: remove
           ls -a public/packages/qibocal  #TODO: remove
           ls -a public/packages/qibocal/serverscripts/web/  #TODO: remove
+          rm public/packages/qibocal/src/qibocal/web/static/styles.css 
           ln -s public/packages/qibocal/src/qibocal/web/static/styles.css styles.css # TODO: change file in a PR
           cd public/packages/qibo
           pip install .[docs]
