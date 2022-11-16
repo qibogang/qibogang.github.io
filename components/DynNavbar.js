@@ -25,9 +25,9 @@ const DropNav = () => {
           <div className="dropdown">
             <button className="dropbtn">Documentation</button>
               <div className="dropdown-content">
-                <a href="/docs/qibo/last">Qibo</a>
-                <a href="/docs/qibolab/last">Qibolab</a>
-                <a href="/docs/qibocal/last">Qibocal</a>
+                <a href="/docs/qibo/last.html">Qibo</a>
+                <a href="/docs/qibolab/last.html">Qibolab</a>
+                <a href="/docs/qibocal/last.html">Qibocal</a>
               </div>
           </div> 
           
