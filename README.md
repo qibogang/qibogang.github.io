@@ -13,14 +13,9 @@ Into this repo you will find some folders:
 ├── pages
 │   ├── api
 │   ├── docs
-│   │   ├── qibo
-│   │   ├── qibocal
-│   │   └── qibolab
 │   └── tutorials
 ├── public
 │   └── images
-│       ├── home
-│       └── tutorials
 ├── styles
 └── tutorials
 ```
