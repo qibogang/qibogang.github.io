@@ -80,8 +80,8 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 For displaying the built site in your browser an host static HTTP server is needed. 
 One possibility is to use the [`python` one](https://docs.python.org/3/library/http.server.html), but this option can be too poor in such cases, in which where it may happen that some pages are not rendered properly. 
 
-A solution to this is to use a more reliable host. For example, in this case Next 
-provide us with the possibility to run the site (but it must be built before!) thanks to:
+A solution to this is to use a more reliable HTTP server. For example, in this case Next 
+provide us with the possibility to serve a production version of the site (but it must be built before!) using:
 
 ```bash
 yarn build
