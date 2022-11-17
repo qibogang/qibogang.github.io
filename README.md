@@ -7,11 +7,33 @@ Here we describe its contents and show you how to run the site in developement m
 
 Into this repo you will find some folders:
 
+```bash
+.
+├── components
+├── pages
+│   ├── api
+│   ├── docs
+│   │   ├── qibo
+│   │   ├── qibocal
+│   │   └── qibolab
+│   └── tutorials
+├── public
+│   └── images
+│       ├── home
+│       └── tutorials
+├── styles
+└── tutorials
+```
+
+In details:
+
 - `pages` contains the `*.js` files corresponding to the pages of the Qibo site.
 - `public` contains the public material needed by the site divided into `packages` and `images`. In `packages` you will find the three target packages: `qibo`, `qibolab` and `qibocal`. It is into these folders that you must go in order to compile the documentation. In `images` you will find all the images used into the site and divided between `home` and `tutorials` according to their use.
 - `components` contains some `*.js` files corresponding to the site's components, such that footer, navbar, tutorial layout and so on.
 - `tutorials` contains some markdowns corresponding to the tutorials presented to the user. Each tutorial is saved into a proper `.md` file.
 - `styles` contains two `*.css` files in which we wrote some styling instructions for the site building.
+
+
 
 
 ### How to open the site in developement mode
