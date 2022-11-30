@@ -2,7 +2,6 @@
 title: 'Quantum Regressor'
 cover_image: 'images/tutorials/vqregressor.png'
 excerpt: 'Using a variational quantum circuit to fit one dimensional functions.'
-tags: ['functions', 'python']
 ---
 
 ## A variational quantum regressor using the parameter shift rule
@@ -14,7 +13,7 @@ Code at [https://github.com/qiboteam/qibo/tree/vqregressor/examples/vqregressor]
 ### Problem overview
 
 We want to tackle a simple one dimensional regression problem using a single qubit Variational Quantum Circuit (VQC) as model, initialized using a [re-uploading strategy](https://arxiv.org/abs/1907.02085). In particular, in this example we
-fit the function y = sin(2x), picking the x points from the interval I=[-1,1].
+fit the function $y = sin(2x)$, picking the x points from the interval $I=[-1,1]$.
 
 The optimization is performed using an [Adam](https://arxiv.org/abs/1412.6980) optimizer.
 It needs the circuit's gradients, which we evaluate through the [Parameter Shift Rule](https://arxiv.org/abs/1811.11184) (PSR).
@@ -35,32 +34,5 @@ We are interested in evaluating the gradients of the following expression:
 
 #### We initialize the quantum regressor
 
-<SyntaxHighlighter language="python">
-  {`
-   vqr.train_with_psr(
-    epochs=epochs,
-    learning_rate=learning_rate,
-    batches=batches,
-    J_treshold=J_treshold,
-    )
-  `}
-</SyntaxHighlighter>
 
-```python
-vqr = VQRegressor(layers=layers, ndata=ndata)
-```
-    
-#### and the initial parameters
-initial_params = np.random.randn(3 * layers)
-    
-#### Let's go with the training
-vqr.train_with_psr(
-    epochs=epochs,
-    learning_rate=learning_rate,
-    batches=batches,
-    J_treshold=J_treshold,
-)
-
-#### show predictions
-vqr.show_predictions("Predictions of the VQR after training", False)
 
