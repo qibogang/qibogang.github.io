@@ -36,13 +36,15 @@ Finally, if we pick $G$ from the rotations generators we can use $s=\pi/2$ and $
 
 #### Loading required features
 
+For building the `parameter_shift` method we need to use some qibo features in order
+to implement the previously introduced mathematical components.
+
 ```python
     import qibo
     import numpy as np
     from qibo import hamiltonians, gates
     from qibo.models import Circuit
     from qibo.hamiltonians.abstract import AbstractHamiltonian
-    from qibo.config import raise_error
 ```
 
 Now we have can write a `parameter_shift` function, in which we take into account 

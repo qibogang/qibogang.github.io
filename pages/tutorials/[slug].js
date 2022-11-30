@@ -25,6 +25,8 @@ const Hero = styled.div`
 `
 
 
+
+
 export default function PostPage({
   mdxSource,
 }) {
@@ -41,7 +43,7 @@ export default function PostPage({
       />
       <link 
         rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github-dark.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/shades-of-purple.min.css">
       </link>
     </Head>
       <DynNavbar/>
