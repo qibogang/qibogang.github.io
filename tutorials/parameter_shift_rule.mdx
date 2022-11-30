@@ -13,13 +13,13 @@ gradients of a variational quantum circuit with respect a variational parameter.
 
 #### The parameter shift rule in a nutshell
 
-Let's consider a parametrized circuit  $\mathcal\{U\}(\vec\{\theta\})$, in which we 
+Let's consider a parametrized circuit  $\mathcal{U}(\vec{\theta})$, in which we 
 build up an unitary gate of the form:
 
-$$ \mathcal\{G\} = \exp \bigl[-i\mu G \bigr] $$ 
+$$ \mathcal{G} = \exp \bigl[-i\mu G \bigr] $$ 
 
 which has at most two eigenvalues $\pm r$. Let's consider an observable $B$ and, 
-finally, let $|q_f \rangle$ be the state we obtain by applying $\mathcal\{U\}$ to $|0\rangle$.
+finally, let $|q_f \rangle$ be the state we obtain by applying $\mathcal{U}$ to $|0\rangle$.
 We are interested in evaluating the gradients of the following expression:
 
 $$ f(\mu) \equiv \langle q_f | B | q_f \rangle, $$
@@ -29,9 +29,9 @@ in this result because the expectation value of $B$ is typically involved in com
 predictions in quantum machine learning problems. The PSR allows us to calculate 
 the derivative of $f(\mu)$ with respect to a evaluating $f$ twice more:
 
-$$ \partial\_\{\mu\} = 1/r \bigl( f(\mu_+) - f(\mu_-) \bigr), $$
+$$ \partial_\mu = \frac{1}{r} \bigl( f(\mu_+) - f(\mu_-) \bigr), $$
 
-where $\mu\_+$ and $\mu_-$ are obtained shifting the parameter $\mu \pm s$ and $s = \pi / 4r$. 
+where $\mu_\pm$ is obtained as $\mu_\pm = \mu \pm s$ and $s = \pi / 4r$. 
 Finally, if we pick $G$ from the rotations generators we can use $s=\pi/2$ and $r=1/2$.
 
 #### Loading required features
