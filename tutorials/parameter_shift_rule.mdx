@@ -2,7 +2,6 @@
 title: 'The parameter shift rule'
 cover_image: 'images/tutorials/derivative_psr.png'
 excerpt: 'Using the parameter shift rule to calculate the derivative of a circuit.'
-tags: ['functions', 'python']
 ---
 
 
@@ -10,6 +9,7 @@ tags: ['functions', 'python']
 
 In this tutorial we use the Parameter Shift Rule (PSR) [1, 2] for evaluating the 
 gradients of a variational quantum circuit with respect a variational parameter.
+
 
 #### The parameter shift rule in a nutshell
 
@@ -29,30 +29,28 @@ in this result because the expectation value of $B$ is typically involved in com
 predictions in quantum machine learning problems. The PSR allows us to calculate 
 the derivative of $f(\mu)$ with respect to a evaluating $f$ twice more:
 
-$$ \partial\_\{\mu\} = \frac\{1\}\{r\} \bigl( f(\mu^+) - f(\mu^-) \bigr), $$
+$$ \partial\_\{\mu\} = 1/r \bigl( f(\mu_+) - f(\mu_-) \bigr), $$
 
-where $\mu^\{\pm\} = \mu \pm s$ and $s = \pi / 4r$. Finally, if we pick $G$ from 
-the rotations generators we can use $s=\pi/2$ and $r=1/2$.
+where $\mu\_+$ and $\mu_-$ are obtained shifting the parameter $\mu \pm s$ and $s = \pi / 4r$. 
+Finally, if we pick $G$ from the rotations generators we can use $s=\pi/2$ and $r=1/2$.
 
 #### Loading required features
 
-<SyntaxHighlighter language="python" showLineNumbers="true">
-  {`
+```python
     import qibo
     import numpy as np
     from qibo import hamiltonians, gates
     from qibo.models import Circuit
     from qibo.hamiltonians.abstract import AbstractHamiltonian
-    from qibo.config import raise_error`}
-</SyntaxHighlighter>
+    from qibo.config import raise_error
+```
 
 Now we have can write a `parameter_shift` function, in which we take into account 
 an hamiltonian (which is our $B$ observable), the index which identify the target 
 variational parameter, the initial state of the circuit and the wigenvalues of 
 the target observable.
 
-<SyntaxHighlighter language="python">
-  {`
+```python
     def parameter_shift(
     circuit, hamiltonian, parameter_index, generator_eigenval, initial_state=None
     ):
@@ -82,8 +80,7 @@ the target observable.
         circuit.set_parameters(original)
 
         return generator_eigenval * (forward - backward)
-  `}
-</SyntaxHighlighter>
+```
 
 
 
@@ -95,21 +92,21 @@ using the `GradientTape()` module of `tensorflow`.
 For doing this, we need to load `tensorflow` and to activate the appropriate 
 `qibo`'s backend.
 
-<SyntaxHighlighter language="python">
-    {`
+
+```python
     # in order to see the difference with tf gradients
     import tensorflow as tf
     qibo.set_backend('tensorflow')
-    `}
-</SyntaxHighlighter>
+```
+
+
 
 
 Now we can define the hamiltonian (in this case we use a Pauli Z as observable) 
 and a parametrized circuit.
 
 
-<SyntaxHighlighter language="python">
-    {`
+```python
     # defining an observable
     def hamiltonian(nqubits = 1):
     m0 = (1/nqubits)*hamiltonians.Z(nqubits).matrix
@@ -123,16 +120,15 @@ and a parametrized circuit.
     c.add(gates.RX(q = 0, theta = 0))
     c.add(gates.M(0))
     return c
-    `}
-</SyntaxHighlighter>
+```
+
 
 
 
 This is the moment to write a function which returns the `tensorflow` values of the gradients. 
 
 
-<SyntaxHighlighter language="python">
-    {`
+```python
     # using GradientTape to benchmark
     def gradient_tape(params):
         params = tf.Variable(params)
@@ -145,27 +141,27 @@ This is the moment to write a function which returns the `tensorflow` values of 
         
         grads = tape.gradient(expected_value, [params])
         return grads
-    `}
-</SyntaxHighlighter>
+```
+
+
 
 
 In order to check the difference, we randomly generate some parameters and we impose them as variational parameters of the circuit.
 
 
-<SyntaxHighlighter language="python">
-    {`
+```python
     # some parameters
     test_params = np.random.randn(2)
     c.set_parameters(test_params)
-    `}
-</SyntaxHighlighter>
+```
+
+
 
 Here we are!
 
 Now we can calculate the gradients using the two methods.
 
-<SyntaxHighlighter language="python">
-    {`
+```python
     test_hamiltonian = hamiltonian()
 
     # running the psr with respect to the two parameters
@@ -178,19 +174,19 @@ Now we can calculate the gradients using the two methods.
     print('Test gradient with respect params[0] with tf:  ', tf_grads[0][0].numpy())
     print('Test gradient with respect params[0] with PSR: ', grad_1.numpy())
     print('Test gradient with respect params[0] with tf:  ', tf_grads[0][1].numpy())
-    `}
-</SyntaxHighlighter>
+```
+
+
 
 And the output should be similar to the following:
 
-<SyntaxHighlighter language="bash">
-    {`
+```bash
     Test gradient with respect params[0] with PSR:  0.09416555057174314
     Test gradient with respect params[0] with tf:   0.09416555057174325
     Test gradient with respect params[0] with PSR:  -0.033018344618441414
     Test gradient with respect params[0] with tf:   -0.033018344618441484
-    `}
-</SyntaxHighlighter>
+```
+
 
 
 As you can see, the values are identical!

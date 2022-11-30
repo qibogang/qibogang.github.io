@@ -6,14 +6,10 @@ import DynNavbar from '../../components/DynNavbar'
 import Footer from '../../components/Footer'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
-import SyntaxHighlighter from 'react-syntax-highlighter'
-import Latex from 'react-latex'
-import { MathJax } from 'better-react-mathjax'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
+import rehypeHighlight from 'rehype-highlight'
 import Head from 'next/head'
-import katex from 'katex'
-import autorender from "../../components/katex-autorender"
-//import '../../styles/katex.min.css'
-
 
 
 
@@ -29,42 +25,29 @@ const Hero = styled.div`
 `
 
 
-const md = require('markdown-it')({
-    html: true
-  })
-  .use(require('markdown-it-highlightjs'))
-  .use(require('markdown-it-katex'))
-
-const components = {SyntaxHighlighter, Latex, MathJax}
-
-
 export default function PostPage({
-  frontmatter: { title, cover_image },
-  slug,
   mdxSource,
 }) {
 
 
-  // mdxSource = autorender.renderMathInElement(mdxSource.compiledSource, {
-  //         // customised options
-  //         // • auto-render specific keys, e.g.:
-  //         delimiters: [
-  //             {left: '$$', right: '$$', display: true},
-  //             {left: '$', right: '$', display: false},
-  //             {left: '\\(', right: '\\)', display: false},
-  //             {left: '\\[', right: '\\]', display: true}
-  //         ],
-  //         // • rendering keys, e.g.:
-  //         throwOnError : false
-  //       })
-  // console.log(mdxSource)
-
   return (
     <>
+    <Head>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css"
+        integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc"
+        crossOrigin="anonymous"
+      />
+      <link 
+        rel="stylesheet" 
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github-dark.min.css">
+      </link>
+    </Head>
       <DynNavbar/>
       <Hero>
           <div className='post-body'>
-            <MDXRemote {...mdxSource} components={components} />
+            <MDXRemote {...mdxSource}/>
           </div>
       </Hero>
       <Footer/>
@@ -97,7 +80,13 @@ export async function getStaticProps({ params: { slug } }) {
   )
 
   const { data: frontmatter, content } = matter(markdownWithMeta)
-  const mdxSource = await serialize(content)
+  const mdxSource = await serialize(content, {
+    mdxOptions: {
+      remarkPlugins: [remarkMath],
+      rehypePlugins: [rehypeKatex, rehypeHighlight],
+      format: 'mdx'
+    }
+  })
 
   return {
     props: {
