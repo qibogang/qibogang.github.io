@@ -21,19 +21,9 @@ const withMDX = require('@next/mdx')({
   },
 })
 
-// module.exports = withMDX({
-//   // adding next base-attributes
-//   ...nextConfig, 
-//   // Append the default value with md extensions
-//   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-// })
-
-module.exports = { ...withMDX({ 
-  // Append the default value with md extensions
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-}), 
-  // adding next base-attributes
-  ...nextConfig,
-}
-
-
+ module.exports = withMDX({
+   // adding next base-attributes
+   ...nextConfig, 
+   // Append the default value with md extensions
+   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+ })
