@@ -10,6 +10,8 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import rehypeHighlight from 'rehype-highlight'
 import Head from 'next/head'
+import 'katex/dist/katex.min.css'
+import 'highlight.js/styles/shades-of-purple.css'
 
 
 
@@ -34,18 +36,6 @@ export default function PostPage({
 
   return (
     <>
-    <Head>
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css"
-        integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc"
-        crossOrigin="anonymous"
-      />
-      <link 
-        rel="stylesheet" 
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/shades-of-purple.min.css">
-      </link>
-    </Head>
       <DynNavbar/>
       <Hero>
           <div className='post-body'>
