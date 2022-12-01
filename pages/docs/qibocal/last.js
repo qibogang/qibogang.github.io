@@ -26,7 +26,7 @@ export default function Documentation() {
       <Hero>
         <iframe 
           //src="https://qibo.readthedocs.io/en/stable/" 
-          src="https://qibocal.readthedocs.io/en/latest/"
+          src="https://qibogang.github.io/qibocal/"
           title="Qibo docs"
           width='100%'
           height='100%'
