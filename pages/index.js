@@ -1,12 +1,10 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import styled from 'styled-components'
 import DynNavbar from '../components/DynNavbar'
 import Footer from '../components/Footer'
 import NextJsCarousel from '../components/Carousel'
 import Link from 'next/link'
-
 
 
 const Hero = styled.div`
@@ -94,6 +92,7 @@ const CarouselHero = styled.div`
 `
 
 export default function Home() {
+
   return (
     <div className={styles.container}>
 
@@ -256,7 +255,3 @@ export default function Home() {
     </div>
   )
 }
-
-
-
-
