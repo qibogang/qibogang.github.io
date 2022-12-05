@@ -9,16 +9,17 @@ import { MDXRemote } from 'next-mdx-remote'
 import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import rehypeHighlight from 'rehype-highlight'
-import Head from 'next/head'
 import 'katex/dist/katex.min.css'
 import 'highlight.js/styles/shades-of-purple.css'
+import styles from '../../styles/Home.module.css'
+
 
 
 
 const Hero = styled.div`
   display: flex;
-  justify-content: left;
   background: #fff;
+  position: sticky;
   align-items: left;
   padding-left: 10%;
   padding-right: 10%;
@@ -27,23 +28,21 @@ const Hero = styled.div`
 `
 
 
-
-
 export default function PostPage({
   mdxSource,
 }) {
 
 
   return (
-    <>
+    <div className={styles.container}>
       <DynNavbar/>
       <Hero>
-          <div className='post-body'>
-            <MDXRemote {...mdxSource}/>
-          </div>
+        <div className='post-body'>
+          <MDXRemote {...mdxSource}/>
+        </div>
       </Hero>
       <Footer/>
-    </>
+    </div>
   )
 }
 

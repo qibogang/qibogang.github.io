@@ -444,18 +444,28 @@ header a {
   padding: 3px 10px;
 }
 
+.post-body {
+  width: 100%;
+}
+
 .post-body ul,
 ol {
   font-size: 110%;
   line-height: 2.3;
   font-weight: bold;
+  text-align: center;
+  display: flex;
+  width: 100%;
   margin: 0px 0;
 }
 
 .post-body pre {
   background: #f4f4f4;
   padding: 0px;
+  align-items: center;
+  text-align: left;
   margin: 0px 0;
+  width: 100%;
   line-height: 2.3;
 }
 
