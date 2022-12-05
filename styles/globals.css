@@ -312,9 +312,6 @@ header a {
   outline: none;
 }
 
-.btn:hover {
-  transform: scale(0.98);
-}
 
 .btn-back {
   background: #6400FF;
