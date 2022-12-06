@@ -62,7 +62,7 @@ pfooter {
   color:#6400FF;
   opacity: 0.9;
   font-size: 35px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .h2-custom {
@@ -70,7 +70,7 @@ pfooter {
   opacity: 0.7;
   font-size: 22px;
   padding-top: 5px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .h2-partners {
@@ -79,7 +79,7 @@ pfooter {
   font-size: 18px;
   padding-top: 10%;
   text-align: center;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .h3-custom {
@@ -87,7 +87,7 @@ pfooter {
   opacity: 0.8;
   font-size: 18px;
   font-weight: bold;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 
@@ -98,7 +98,7 @@ pfooter {
   font-size: 35px;
   padding-top: 5%;
   text-align: right;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .h1-custom {
@@ -108,7 +108,7 @@ pfooter {
   font-size: 35px;
   padding-top: 10%;
   text-align: center;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .h1-carousel {
@@ -118,7 +118,7 @@ pfooter {
   font-size: 35px;
   padding-top: 10%;
   text-align: center;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -174,7 +174,7 @@ header a {
   padding-top: 0%;
   padding-right: 10%;
   padding-left: 10%;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .img-container {
@@ -186,7 +186,7 @@ header a {
   padding-top: 0%;
   padding-right: 20%;
   padding-left: 20%;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .small-container {
@@ -199,7 +199,7 @@ header a {
   padding-bottom: 2%;
   padding-right: 32%;
   padding-left: 32%;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .smaller-container {
@@ -210,7 +210,7 @@ header a {
   justify-content: center;
   padding-right: 44%;
   padding-left: 44%;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .smallest-container {
@@ -222,7 +222,7 @@ header a {
   padding-right: 45%;
   padding-left: 45%;
   opacity: 0.6;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .container-carousel {
@@ -233,7 +233,7 @@ header a {
   justify-content: center;
   padding-right: 10%;
   padding-left: 10%;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .row-padded-element {
@@ -276,7 +276,7 @@ header a {
   cursor: pointer;
   text-decoration: none;
   font-size: 15px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Roboto, Roboto, sans-serif;
   text-align: center;
   opacity: 1;
   margin-left: 12px;
@@ -292,7 +292,7 @@ header a {
   cursor: pointer;
   text-decoration: none;
   font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Roboto, Roboto, sans-serif;
   text-align: center;
 }
 
@@ -331,7 +331,7 @@ header a {
   cursor: pointer;
   text-decoration: none;
   font-size: 15px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Roboto, Roboto, sans-serif;
   text-align: center;
   opacity: 1;
   margin-left: 12px;
@@ -374,6 +374,7 @@ header a {
   grid-template-columns: repeat(3, 1fr);
   gap: 100px;
   margin-top: 0px;
+  font-family: Roboto, Roboto, sans-serif;
   width: 100%;
   padding: 25px;
 }
@@ -403,7 +404,7 @@ header a {
   margin: 0px 0;
   border-radius: 20px;
   box-shadow: 0px 0px 0px 2px #6400FF;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-align: center; 
 }
 
@@ -411,7 +412,7 @@ header a {
   padding: 15px;
   border-radius: 5px;
   box-shadow: 1px 2px 4px 1px #6400FF;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
 }
 
@@ -420,7 +421,7 @@ header a {
   border-radius: 0px;
   justify-content: center;
   box-shadow: 0 0px 0px 0px #6400FF;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   vertical-align: middle;
   align-items: center;
@@ -480,7 +481,7 @@ ol {
     padding-top: 0%;
     padding-right: 5%;
     padding-left: 5%;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 
   .h1-carousel {
@@ -496,7 +497,7 @@ ol {
     padding-top: 2%;
     padding-right: 5%;
     padding-left: 5%;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 
   .home-card {
@@ -504,7 +505,7 @@ ol {
     border-radius: 0px;
     justify-content: center;
     box-shadow: 0 0px 0px 0px #6400FF;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-align: center;
   }
 
@@ -712,7 +713,7 @@ nav{
   font-size: 16px;
   border: none;
   cursor: pointer;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Roboto, Roboto, sans-serif;
 }
 
 /* The container <div> - needed to position the dropdown content */
