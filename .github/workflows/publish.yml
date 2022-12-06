@@ -9,4 +9,4 @@ on:
 jobs:
 
   deploy-docs:
-    uses: qibogang/workflows/.github/workflows/publish-next-to-ghpages.yml@main
+    uses: qibogang/workflows/.github/workflows/publish-next-on-ghpages.yml@main
