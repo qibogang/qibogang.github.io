@@ -382,6 +382,7 @@ header a {
 .four-posts {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  align-items: center;
   gap: 30px;
   margin-top: 0px;
   width: 100%;
