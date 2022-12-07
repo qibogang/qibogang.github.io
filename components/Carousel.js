@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "react-responsive-carousel/lib/styles/carousel.css";
 import { Carousel } from 'react-responsive-carousel';
 
 
@@ -10,7 +10,13 @@ export default class NextJsCarousel extends Component {
             <div className='in-container'>
               <div className='h1-carousel'>Built for</div>
               
-              <Carousel showThumbs={false}>
+              <Carousel 
+                showThumbs={false}
+                autoPlay={true}
+                infiniteLoop={true}
+                interval={3000}
+                emulateTouch={true}
+              >
 
                   <div className='in-container'>
                     <div className='home-card'>
