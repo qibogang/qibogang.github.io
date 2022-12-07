@@ -8,17 +8,16 @@ import Link from 'next/link'
 
 
 const Hero = styled.div`
-  height: 82vh;
+  height: 99vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-left: 10%;
   padding-right: 10%;
-  background-image: url("/images/home/bg-1.png");
+  background-image: url("/images/home/bg-01.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: relative;
   
   @media (max-width: 768px) {
     padding-bottom: 100px;
@@ -28,7 +27,8 @@ const Hero = styled.div`
 const Hero2 = styled.div`
   padding-left: 10%;
   padding-right: 10%;
-  background-image: url("/images/home/bg-test.png");
+  padding-bottom: 5%;
+  background-image: url("/images/home/yellow_page.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -36,9 +36,10 @@ const Hero2 = styled.div`
 `
 
 const Hero3 = styled.div`
+
   padding-left: 10%;
   padding-right: 10%;
-  background-image: url("/images/home/bg-last.png");
+  background-image: url("/images/home/empty_yellow_page.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -55,7 +56,7 @@ const HeroFinal = styled.div`
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 10%;
-  background-image: url("/images/home/bg-final.png");
+  background-image: url("/images/home/empty_yellow_page.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -75,7 +76,7 @@ const CarouselHero = styled.div`
   padding-left: 0%;
   padding-right: 0%;
   padding-bottom: 5%;
-  background-image: url("/images/home/bg-carousel.png");
+  background-image: url("/images/home/empty_yellow_page.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
