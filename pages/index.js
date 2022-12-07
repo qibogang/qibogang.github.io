@@ -46,7 +46,7 @@ const Hero3 = styled.div`
 
   @media (max-width: 768px) {
     display: flex;
-    padding-top: 140%;
+    padding-top: 10%;
   }
 `
 
@@ -123,35 +123,6 @@ export default function Home() {
       </div>
       </Hero>
 
-        <Hero3>
-        <div className='in-container'>
-          <div className='h2-partners'> Partners </div>
-          <div className='eight-posts'>
-            <div className='home-card'>
-                <img src='/images/home/tii.png' alt='/'/>
-            </div>
-            <div className='home-card'>
-                <img src='/images/home/infn.png' alt='/'/>
-            </div>
-            <div className='home-card'>
-              <img src='/images/home/cern.png' alt='/'/>
-            </div>
-            <div className='home-card'>
-              <img src='/images/home/nvidia.png' alt='/'/>
-            </div>
-            <div className='home-card'>
-              <img src='/images/home/qilimanjaro.png' alt='/'/>
-            </div>
-            <div className='home-card'>
-              <img src='/images/home/ihpc.png' alt='/'/>
-            </div>
-            <div className='home-card'>
-              <img src='/images/home/cqt.png' alt='/'/>
-            </div>
-          </div>
-        </div>
-      </Hero3>
-
       <Hero2>
       <div className='in-container'>
         <div className='row-padded-element'  id='OpenEco'>          
@@ -213,6 +184,35 @@ export default function Home() {
         </div>
       </div>
       </Hero2>
+
+      <Hero3>
+        <div className='in-container'>
+          <div className='h2-partners'> Partners </div>
+          <div className='eight-posts'>
+            <div className='home-card'>
+                <img src='/images/home/tii.png' alt='/'/>
+            </div>
+            <div className='home-card'>
+                <img src='/images/home/infn.png' alt='/'/>
+            </div>
+            <div className='home-card'>
+              <img src='/images/home/cern.png' alt='/'/>
+            </div>
+            <div className='home-card'>
+              <img src='/images/home/nvidia.png' alt='/'/>
+            </div>
+            <div className='home-card'>
+              <img src='/images/home/qilimanjaro.png' alt='/'/>
+            </div>
+            <div className='home-card'>
+              <img src='/images/home/ihpc.png' alt='/'/>
+            </div>
+            <div className='home-card'>
+              <img src='/images/home/cqt.png' alt='/'/>
+            </div>
+          </div>
+        </div>
+      </Hero3>
 
 
       <CarouselHero>
