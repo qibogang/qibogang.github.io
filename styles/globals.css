@@ -409,10 +409,11 @@ header a {
 
 .card {
   padding: 15px;
-  border-radius: 5px;
-  box-shadow: 1px 2px 4px 1px #6400FF;
+  border-radius:20px;
+  box-shadow: 0px 0px 4px 2px #838383;
   font-family: 'Arial', sans-serif;
   text-align: center;
+  background: #FFF;
 }
 
 .home-card {
