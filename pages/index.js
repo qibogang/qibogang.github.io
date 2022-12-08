@@ -190,25 +190,40 @@ export default function Home() {
           <div className='h2-partners'> Partners </div>
           <div className='eight-posts'>
             <div className='home-card'>
-                <img src='/images/home/tii.png' alt='/'/>
+                <a href="https://www.tii.ae/quantum"> 
+                  <img src='/images/home/tii.png' alt='/'/> 
+                </a>
             </div>
             <div className='home-card'>
-                <img src='/images/home/infn.png' alt='/'/>
+                <a href="https://home.infn.it/it/"> 
+                  <img src='/images/home/infn.png' alt='/'/> 
+                </a>
             </div>
             <div className='home-card'>
-              <img src='/images/home/cern.png' alt='/'/>
+              <a href="https://home.cern/"> 
+                <img src='/images/home/cern.png' alt='/'/> 
+              </a>
             </div>
             <div className='home-card'>
-              <img src='/images/home/nvidia.png' alt='/'/>
+              <a href="https://www.nvidia.com/en-usqilimanjaro
+              "> 
+                <img src='/images/home/nvidia.png' alt='/'/>
+              </a>
             </div>
             <div className='home-card'>
-              <img src='/images/home/qilimanjaro.png' alt='/'/>
+              <a href="https://www.qilimanjaro.tech/"> 
+                <img src='/images/home/qilimanjaro.png' alt='/'/> 
+              </a>
             </div>
             <div className='home-card'>
-              <img src='/images/home/ihpc.png' alt='/'/>
+              <a href="https://www.a-star.edu.sg/ihpc"> 
+                <img src='/images/home/ihpc.png' alt='/'/> 
+              </a>
             </div>
             <div className='home-card'>
-              <img src='/images/home/cqt.png' alt='/'/>
+              <a href="https://www.quantumlah.org/"> 
+                <img src='/images/home/cqt.png' alt='/'/>
+              </a>
             </div>
           </div>
         </div>
