@@ -21,8 +21,8 @@ const Hero = styled.div`
   background: #fff;
   position: sticky;
   align-items: left;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 11.5%;
+  padding-right: 11.5%;
   padding-top: 20px;
   padding-bottom: 20px;
 `

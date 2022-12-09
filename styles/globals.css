@@ -4,7 +4,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   margin: 0;
   padding: 0;
   background-image: url("/images/backgrounds/ffflux.svg");
@@ -66,7 +66,6 @@ pfooter {
   color:#6400FF;
   opacity: 0.9;
   font-size: 35px;
-  font-family: 'Arial', sans-serif;
 }
 
 .h2-custom {
@@ -74,16 +73,14 @@ pfooter {
   opacity: 0.7;
   font-size: 22px;
   padding-top: 5px;
-  font-family: 'Arial', sans-serif;
 }
 
 .h2-partners {
   color:#000000;
-  opacity: 0.5;
-  font-size: 18px;
+  opacity: 1;
+  font-size: 25px;
   padding-top: 10%;
   text-align: center;
-  font-family: 'Arial', sans-serif;
 }
 
 .h3-custom {
@@ -91,7 +88,6 @@ pfooter {
   opacity: 0.8;
   font-size: 18px;
   font-weight: bold;
-  font-family: 'Arial', sans-serif;
 }
 
 
@@ -102,7 +98,6 @@ pfooter {
   font-size: 35px;
   padding-top: 5%;
   text-align: right;
-  font-family: 'Arial', sans-serif;
 }
 
 .h1-custom {
@@ -112,7 +107,6 @@ pfooter {
   font-size: 35px;
   padding-top: 10%;
   text-align: center;
-  font-family: 'Arial', sans-serif;
 }
 
 .h1-carousel {
@@ -122,7 +116,6 @@ pfooter {
   font-size: 35px;
   padding-top: 10%;
   text-align: center;
-  font-family: 'Arial', sans-serif;
 }
 
 a {
@@ -178,7 +171,6 @@ header a {
   padding-top: 0%;
   padding-right: 10%;
   padding-left: 10%;
-  font-family: 'Arial', sans-serif;
 }
 
 .img-container {
@@ -190,7 +182,6 @@ header a {
   padding-top: 0%;
   padding-right: 20%;
   padding-left: 20%;
-  font-family: 'Arial', sans-serif;
 }
 
 .small-container {
@@ -203,7 +194,6 @@ header a {
   padding-bottom: 2%;
   padding-right: 32%;
   padding-left: 32%;
-  font-family: 'Arial', sans-serif;
 }
 
 .smaller-container {
@@ -214,7 +204,6 @@ header a {
   justify-content: center;
   padding-right: 44%;
   padding-left: 44%;
-  font-family: 'Arial', sans-serif;
 }
 
 .smallest-container {
@@ -226,7 +215,6 @@ header a {
   padding-right: 45%;
   padding-left: 45%;
   opacity: 0.6;
-  font-family: 'Arial', sans-serif;
 }
 
 .container-carousel {
@@ -237,7 +225,6 @@ header a {
   justify-content: center;
   padding-right: 10%;
   padding-left: 10%;
-  font-family: 'Arial', sans-serif;
 }
 
 .row-padded-element {
@@ -280,7 +267,6 @@ header a {
   cursor: pointer;
   text-decoration: none;
   font-size: 15px;
-  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   opacity: 1;
   margin-left: 12px;
@@ -296,7 +282,6 @@ header a {
   cursor: pointer;
   text-decoration: none;
   font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
 
@@ -335,7 +320,6 @@ header a {
   cursor: pointer;
   text-decoration: none;
   font-size: 15px;
-  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   opacity: 1;
   margin-left: 12px;
@@ -377,7 +361,7 @@ header a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 100px;
-  margin-top: 0px;
+  margin-top: 0px;;
   width: 100%;
   padding: 25px;
 }
@@ -386,6 +370,7 @@ header a {
 .four-posts {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  align-items: center;
   gap: 30px;
   margin-top: 0px;
   width: 100%;
@@ -407,7 +392,6 @@ header a {
   margin: 0px 0;
   border-radius: 20px;
   box-shadow: 0px 0px 0px 2px #6400FF;
-  font-family: 'Arial', sans-serif;
   text-align: center; 
 }
 
@@ -415,8 +399,8 @@ header a {
   padding: 15px;
   border-radius: 5px;
   box-shadow: 1px 2px 4px 1px #6400FF;
-  font-family: 'Arial', sans-serif;
   text-align: center;
+  background: #FFF;
 }
 
 .home-card {
@@ -424,7 +408,6 @@ header a {
   border-radius: 0px;
   justify-content: center;
   box-shadow: 0 0px 0px 0px #6400FF;
-  font-family: 'Arial', sans-serif;
   text-align: center;
   vertical-align: middle;
   align-items: center;
@@ -484,7 +467,6 @@ ol {
     padding-top: 0%;
     padding-right: 5%;
     padding-left: 5%;
-    font-family: 'Arial', sans-serif;
   }
 
   .h1-carousel {
@@ -500,7 +482,6 @@ ol {
     padding-top: 2%;
     padding-right: 5%;
     padding-left: 5%;
-    font-family: 'Arial', sans-serif;
   }
 
   .home-card {
@@ -508,7 +489,6 @@ ol {
     border-radius: 0px;
     justify-content: center;
     box-shadow: 0 0px 0px 0px #6400FF;
-    font-family: 'Arial', sans-serif;
     text-align: center;
   }
 
@@ -563,6 +543,7 @@ ol {
   }
 
   .nav{
+    height: 70px;
     display: flex;
     padding: 0px;
     padding-left: 5%;
@@ -594,6 +575,7 @@ header{
 
 nav{
   display: flex;
+  height: 60px;
   padding-left: 11.5%;
   padding-right: 11.5%;
   justify-content: space-between;
@@ -668,6 +650,7 @@ nav{
     display: none;
   }
 
+
 }
 
 
@@ -713,10 +696,9 @@ nav{
   padding: 16px;
   padding-right: 10px;
   padding-left: 10px;
-  font-size: 16px;
+  font-size: 18px;
   border: none;
   cursor: pointer;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -730,7 +712,7 @@ nav{
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 143px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -763,7 +745,7 @@ nav{
   background-color: #6400FF;
   color: white;
   padding: 24px;
-  font-size: 16px;
+  font-size: 18px;
   min-width: 80px;
   border: none;
   cursor: pointer;
@@ -779,7 +761,7 @@ nav{
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 80px;
+  min-width: 20px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }

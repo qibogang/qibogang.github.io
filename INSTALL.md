@@ -2,94 +2,33 @@
 
 In order to run the site in developement mode you need some packages to be installed.
 
-#### Installing `sphinx` into a `virtualenv`
+#### We use `yarn v1` as dependence
 
-At first, you need to have `sphinx` properly working on your environment. It is needed
-because the next step is to build the documentations locally. 
+We developed the site using `yarn v1` as dependence.
 
-We suggest to install it into a `virtualenv` and for doing this we first need an environment.
-Let's check if you have correctly installed `virtualenv` by running:
+In order to build this site on this way the first thing to do is to install Node.js and
+`npm`. Before doing this, let's check if you have them already installed on your device.
 
-```bash
-which virtualenv
-```
+ ```bash
+node -v
+npm -v
+ ```
+  
+Note that we need to use a `node` version equal to or greater than 13.
+We suggest to follow the official instructions via package manager that can be
+found [here](https://nodejs.org/en/download/package-manager/). 
 
-If yes, you will read its path location on the terminal. If not, you can install it following
-the [official instructions](https://virtualenv.pypa.io/en/latest/installation.html).
+Typically `npm` (Node Package Manager) is included with with `node` installation.
+It can be useful to update its version as explained in 
+[the official `npm` documentation](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
 
-Now we create an environment that we will use for building the docs using the following command:
-
-```bash
-virtualenv my-sphinx-env
-```
-
-Let's activate the new environment:
-
-```bash
-source my-sphinx-env/bin/activate
-```
-
-Now you will read the name of your environment `(my-sphinx-env)` on the right side of the command line.
-Here we are, now we can proceed with the installation of `sphinx`.
-
-You can do this running following the 
-[official `sphinx` instructions](https://smobsc.readthedocs.io/en/stable/usage/installation.html).
-On Linux or MacOS run:
-
-```bash
-pip install -U sphinx
-```
-
-or on the Windows prompt:
-
-```bash
-pip install -U --pre sphinx
-```
-
-Now the environment is ready to build the documentations.
-
-#### Building the docs
-
-The Qibo site needs the documentations to be generated locally. 
-
-###### Qibo docs
-
-For building `qibo`'s documentation run:
-
-```bash
-cd public/packages/qibo/doc
-make html
-```
-
-If all is right, you must now have a folder called `build`, into `qibo/doc`.
-
-###### Qibolab docs
-
-For building `qibolab`'s documentation come back to root into `qibogang.github.io` and run:
-
-```bash
-cd public/packages/qibolab/doc
-make html
-```
-
-If all is right, you must now have a folder called `build`, into `qibolab/doc`.
-
-###### Qibocal docs
-
-For building `qibocal`'s documentation come back to root into `qibogang.github.io` and run:
-
-```bash
-cd public/packages/qibocal/doc
-make html
-```
-
-If all is right, you must now have a folder called `build`, into `qibocal/doc`.
+After having installed `node` and its package manager, we can proceed with `yarn`.
 
 
-#### We use `yarn` as dependence
+##### Installing `yarn`
 
-We developed the site using `yarn` as dependence. You can install it following the
-[official instructions](https://yarnpkg.com/getting-started/install).
+For a proper `yarn` installation follow the official instructions [here](https://yarnpkg.com/getting-started/install)
+and pay attention to which version of Node.js you are using.
 
 ###### Required packages to compile it in dev mode
 
