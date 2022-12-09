@@ -18,7 +18,7 @@ const Hero = styled.div`
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: relative;
+  background-attachment: fixed;
   
   @media (max-width: 768px) {
     padding-bottom: 100px;
@@ -32,7 +32,7 @@ const Hero2 = styled.div`
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: relative;
+  background-attachment: fixed;
 `
 
 const Hero3 = styled.div`
