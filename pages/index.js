@@ -56,7 +56,7 @@ const GettingStartedHero = styled.div`
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 0%;
-  background-image: url("/images/home/bg-final.png");
+  background-image: url("/images/backgrounds/PAPER.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
