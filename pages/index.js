@@ -28,11 +28,11 @@ const Hero2 = styled.div`
   padding-left: 10%;
   padding-right: 10%;
   padding-bottom: 5%;
+
   background-image: url("/images/backgrounds/PAPER.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: relative;
 `
 
 const Hero3 = styled.div`
@@ -43,7 +43,6 @@ const Hero3 = styled.div`
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: relative;
 
   @media (max-width: 768px) {
     display: flex;
@@ -60,7 +59,6 @@ const HeroFinal = styled.div`
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: relative;
 
   @media (max-width: 768px) {
     display: flex;
@@ -80,7 +78,6 @@ const CarouselHero = styled.div`
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: relative;
 
    @media (max-width: 768px) {
     display: flex;

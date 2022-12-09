@@ -17,6 +17,11 @@ const Hero = styled.div`
   align-items: center;
   padding-left: 10%;
   padding-right: 10%;
+
+  background-image: url("/images/backgrounds/ffflux.svg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 `
 
 
