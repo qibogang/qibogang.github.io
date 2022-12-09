@@ -205,8 +205,7 @@ export default function Home() {
               </a>
             </div>
             <div className='home-card'>
-              <a href="https://www.nvidia.com/en-usqilimanjaro
-              "> 
+              <a href="https://www.nvidia.com/en-us"> 
                 <img src='/images/home/nvidia.png' alt='/'/>
               </a>
             </div>
