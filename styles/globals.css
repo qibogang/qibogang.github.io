@@ -73,8 +73,8 @@ pfooter {
 
 .h2-partners {
   color:#000000;
-  opacity: 0.5;
-  font-size: 18px;
+  opacity: 1;
+  font-size: 25px;
   padding-top: 10%;
   text-align: center;
 }
@@ -366,6 +366,7 @@ header a {
 .four-posts {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  align-items: center;
   gap: 30px;
   margin-top: 0px;
   width: 100%;
@@ -395,6 +396,7 @@ header a {
   border-radius: 5px;
   box-shadow: 1px 2px 4px 1px #6400FF;
   text-align: center;
+  background: #FFF;
 }
 
 .home-card {
@@ -537,6 +539,7 @@ ol {
   }
 
   .nav{
+    height: 70px;
     display: flex;
     padding: 0px;
     padding-left: 5%;
@@ -568,6 +571,7 @@ header{
 
 nav{
   display: flex;
+  height: 60px;
   padding-left: 11.5%;
   padding-right: 11.5%;
   justify-content: space-between;
@@ -642,6 +646,7 @@ nav{
     display: none;
   }
 
+
 }
 
 
@@ -687,7 +692,7 @@ nav{
   padding: 16px;
   padding-right: 10px;
   padding-left: 10px;
-  font-size: 16px;
+  font-size: 18px;
   border: none;
   cursor: pointer;
 }
@@ -703,7 +708,7 @@ nav{
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 143px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -736,7 +741,7 @@ nav{
   background-color: #6400FF;
   color: white;
   padding: 24px;
-  font-size: 16px;
+  font-size: 18px;
   min-width: 80px;
   border: none;
   cursor: pointer;
@@ -752,7 +757,7 @@ nav{
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  min-width: 80px;
+  min-width: 20px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
