@@ -7,7 +7,7 @@ import NextJsCarousel from '../components/Carousel'
 import Link from 'next/link'
 
 
-const Hero = styled.div`
+const FirstHero = styled.div`
   height: 82vh;
   display: flex;
   justify-content: center;
@@ -25,7 +25,7 @@ const Hero = styled.div`
   }
 `
 
-const Hero2 = styled.div`
+const SecondHero = styled.div`
   padding-left: 10%;
   padding-right: 10%;
   background-image: url("/images/home/bg-test.png");
@@ -35,7 +35,7 @@ const Hero2 = styled.div`
   background-attachment: fixed;
 `
 
-const Hero3 = styled.div`
+const PartnersHero = styled.div`
   padding-left: 10%;
   padding-right: 10%;
   background-image: url("/images/home/bg-last.png");
@@ -50,11 +50,11 @@ const Hero3 = styled.div`
   }
 `
 
-const HeroFinal = styled.div`
+const GettingStartedHero = styled.div`
   height: 58vh;
   padding-left: 10%;
   padding-right: 10%;
-  padding-top: 10%;
+  padding-top: 0%;
   background-image: url("/images/home/bg-final.png");
   background-size: cover;
   background-position: center center;
@@ -104,7 +104,7 @@ export default function Home() {
 
       <DynNavbar/>
 
-      <Hero>
+      <FirstHero>
       <div>
       <div className='two-posts'>
         <div className='home-card'>
@@ -121,9 +121,9 @@ export default function Home() {
       </div>
 
       </div>
-      </Hero>
+      </FirstHero>
 
-      <Hero2>
+      <SecondHero>
       <div className='in-container'>
         <div className='row-padded-element'  id='OpenEco'>          
           <div className='h1-custom'>An open quantum ecosystem</div>
@@ -183,7 +183,7 @@ export default function Home() {
             </div>
         </div>
       </div>
-      </Hero2>
+      </SecondHero>
 
       <Hero3>
         <div className='in-container'>
@@ -233,7 +233,7 @@ export default function Home() {
         <NextJsCarousel/>
       </CarouselHero>
 
-      <HeroFinal>
+      <GettingStartedHero>
 
         <div className='home-card'>
           <div className='h1-custom'>
@@ -261,7 +261,7 @@ export default function Home() {
           </div>
         </div>
 
-      </HeroFinal>
+      </GettingStartedHero>
 
       <Footer/>
 
