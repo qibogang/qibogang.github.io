@@ -14,7 +14,7 @@ const Hero = styled.div`
   align-items: center;
   padding-left: 10%;
   padding-right: 10%;
-  background-image: url("/images/home/bg-01.png");
+  background-image: url("/images/backgrounds/PAPER.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -28,7 +28,7 @@ const Hero2 = styled.div`
   padding-left: 10%;
   padding-right: 10%;
   padding-bottom: 5%;
-  background-image: url("/images/home/yellow_page.png");
+  background-image: url("/images/backgrounds/PAPER.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -39,7 +39,7 @@ const Hero3 = styled.div`
 
   padding-left: 10%;
   padding-right: 10%;
-  background-image: url("/images/home/empty_yellow_page.png");
+  background-image: url("/images/backgrounds/PAPER.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -56,7 +56,7 @@ const HeroFinal = styled.div`
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 10%;
-  background-image: url("/images/home/empty_yellow_page.png");
+  background-image: url("/images/backgrounds/PAPER.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -76,7 +76,7 @@ const CarouselHero = styled.div`
   padding-left: 0%;
   padding-right: 0%;
   padding-bottom: 5%;
-  background-image: url("/images/home/empty_yellow_page.png");
+  background-image: url("/images/backgrounds/PAPER.png");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -109,7 +109,7 @@ export default function Home() {
       <div>
       <div className='two-posts'>
         <div className='home-card'>
-          <img src='/images/home/new-hero.png' alt='/'/>
+          <img src='/images/home/hero-no-bg.png' alt='/'/>
         </div>
         <div className='home-card'>
           <div className='row-padded-element'>          
