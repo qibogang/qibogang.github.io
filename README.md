@@ -23,34 +23,21 @@ Into this repo you will find some folders:
 In details:
 
 - `pages` contains the `*.js` files corresponding to the pages of the Qibo site.
-- `public` contains the public material needed by the site divided into `packages` and `images`. In `packages` you will find the three target packages: `qibo`, `qibolab` and `qibocal`. It is into these folders that you must go in order to compile the documentation. In `images` you will find all the images used into the site and divided between `home` and `tutorials` according to their use.
+- `public` contains the public material needed by the site. In `images` you will find all the images used into the site and divided between `home`, `tutorials` and `backgrounds`, according to their use.
 - `components` contains some `*.js` files corresponding to the site's components, such that footer, navbar, tutorial layout and so on.
 - `tutorials` contains some markdowns corresponding to the tutorials presented to the user. Each tutorial is saved into a proper `.md` file.
 - `styles` contains two `*.css` files in which we wrote some styling instructions for the site building.
-
-
 
 
 ### How to open the site in developement mode
 
 First, you need to clone this repo locally. 
 
-##### The qibo site needs qibo, qibolab and qibocal
-
-This repo uses other three repos to properly build the documentations. We need to 
-get the correct `submodules` in order to do that. After having cloned the repo, follow these
-instructions:
-
-```bash
-cd qibogang.github.io
-git submodule init
-git submodule update
-```
 
 ##### Follow `INSTALL.md` instructions now
 
 The next step is to install some more packages. 
-Please follow the [installation istructions](https://github.com/qibogang/qibogang.github.io/blob/installation_istructions/INSTALL.md).
+Please follow the [installation istructions](https://github.com/qibogang/qibogang.github.io/blob/master/INSTALL.md).
 
 
 ##### Run the site in developement mode!
