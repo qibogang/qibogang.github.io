@@ -185,7 +185,7 @@ export default function Home() {
       </div>
       </SecondHero>
 
-      <Hero3>
+      <PartnersHero>
         <div className='in-container'>
           <div className='h2-partners'> Partners </div>
           <div className='eight-posts'>
@@ -226,7 +226,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </Hero3>
+      </PartnersHero>
 
 
       <CarouselHero>
