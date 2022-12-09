@@ -46,7 +46,7 @@ const Hero3 = styled.div`
 
   @media (max-width: 768px) {
     display: flex;
-    padding-top: 140%;
+    padding-top: 10%;
   }
 `
 
@@ -185,6 +185,49 @@ export default function Home() {
       </div>
       </Hero2>
 
+      <Hero3>
+        <div className='in-container'>
+          <div className='h2-partners'> Partners </div>
+          <div className='eight-posts'>
+            <div className='home-card'>
+                <a href="https://www.tii.ae/quantum"> 
+                  <img src='/images/home/tii.png' alt='/'/> 
+                </a>
+            </div>
+            <div className='home-card'>
+                <a href="https://home.infn.it/it/"> 
+                  <img src='/images/home/infn.png' alt='/'/> 
+                </a>
+            </div>
+            <div className='home-card'>
+              <a href="https://home.cern/"> 
+                <img src='/images/home/cern.png' alt='/'/> 
+              </a>
+            </div>
+            <div className='home-card'>
+              <a href="https://www.nvidia.com/en-us"> 
+                <img src='/images/home/nvidia.png' alt='/'/>
+              </a>
+            </div>
+            <div className='home-card'>
+              <a href="https://www.qilimanjaro.tech/"> 
+                <img src='/images/home/qilimanjaro.png' alt='/'/> 
+              </a>
+            </div>
+            <div className='home-card'>
+              <a href="https://www.a-star.edu.sg/ihpc"> 
+                <img src='/images/home/ihpc.png' alt='/'/> 
+              </a>
+            </div>
+            <div className='home-card'>
+              <a href="https://www.quantumlah.org/"> 
+                <img src='/images/home/cqt.png' alt='/'/>
+              </a>
+            </div>
+          </div>
+        </div>
+      </Hero3>
+
 
       <CarouselHero>
         <NextJsCarousel/>
@@ -220,36 +263,6 @@ export default function Home() {
 
       </HeroFinal>
 
-      <Hero3>
-        <div className='in-container'>
-          <div className='h2-partners'> Partners </div>
-          <div className='eight-posts'>
-            <div className='home-card'>
-                <img src='/images/home/tii.png' alt='/'/>
-            </div>
-            <div className='home-card'>
-                <img src='/images/home/infn.png' alt='/'/>
-            </div>
-            <div className='home-card'>
-              <img src='/images/home/cern.png' alt='/'/>
-            </div>
-            <div className='home-card'>
-              <img src='/images/home/nvidia.png' alt='/'/>
-            </div>
-            <div className='home-card'>
-              <img src='/images/home/qilimanjaro.png' alt='/'/>
-            </div>
-            <div className='home-card'>
-              <img src='/images/home/ihpc.png' alt='/'/>
-            </div>
-            <div className='home-card'>
-              <img src='/images/home/cqt.png' alt='/'/>
-            </div>
-          </div>
-        </div>
-      </Hero3>
-
-    
       <Footer/>
 
     </div>
