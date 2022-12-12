@@ -501,6 +501,7 @@ ol {
 
   .two-posts {
     align-items: center;
+    position:relative;
     margin-top: 100px;
     margin-bottom: 50px;
     grid-template-columns: 1fr;

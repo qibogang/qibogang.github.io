@@ -51,9 +51,8 @@ const PartnersHero = styled.div`
 `
 
 const GettingStartedHero = styled.div`
-  height: 58vh;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 12%;
+  padding-right: 12%;
   padding-top: 0%;
   background-image: url("/images/home/bg-final.png");
   background-size: cover;
@@ -63,6 +62,9 @@ const GettingStartedHero = styled.div`
 
   @media (max-width: 768px) {
     display: flex;
+
+  padding-left: 22%;
+  padding-right: 22%;
   }
 `
 
