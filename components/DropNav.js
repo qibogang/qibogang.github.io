@@ -24,8 +24,8 @@ const DropNav = () => {
           <div className="dropdown">
             <button className="dropbtn">Qibo releases</button>
               <div className="dropdown-content">
-                <a href="/docs/qibolab/stable">Stable</a>
-                <a href="/docs/qibolab/latest">Latest</a>
+                <a href="/docs/qibo/stable">Stable</a>
+                <a href="/docs/qibo/latest">Latest</a>
               </div>
           </div> 
 
