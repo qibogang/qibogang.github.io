@@ -25,7 +25,7 @@ const DropNav = () => {
           <div className="dropdown">
             <button className="dropbtn">Documentation</button>
               <div className="dropdown-content">
-                <a href="/docs/qibo/last">Qibo</a>
+                <a href="/docs/qibo/stable">Qibo</a>
                 <a href="/docs/qibolab/last">Qibolab</a>
                 <a href="/docs/qibocal/last">Qibocal</a>
               </div>
@@ -45,7 +45,7 @@ const DropNav = () => {
               <div className="bigdropdown-content">
                 <a href="/">Home</a>
                 <a href="/tutorials">Tutorials</a>
-                <a href="/docs/qibo/last">Qibo</a>
+                <a href="/docs/qibo/stable">Qibo</a>
                 <a href="/docs/qibolab/last">Qibolab</a>
                 <a href="/docs/qibocal/last">Qibocal</a>
               </div>
