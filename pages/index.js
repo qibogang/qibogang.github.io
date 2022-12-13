@@ -14,11 +14,6 @@ const FirstHero = styled.div`
   align-items: center;
   padding-left: 10%;
   padding-right: 10%;
-  background-image: url("/images/home/bg-1.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   
   @media (max-width: 768px) {
     padding-bottom: 100px;
@@ -28,21 +23,12 @@ const FirstHero = styled.div`
 const SecondHero = styled.div`
   padding-left: 10%;
   padding-right: 10%;
-  background-image: url("/images/home/bg-test.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  padding-bottom: 5%;
 `
 
 const PartnersHero = styled.div`
   padding-left: 10%;
   padding-right: 10%;
-  background-image: url("/images/home/bg-last.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: relative;
 
   @media (max-width: 768px) {
     display: flex;
@@ -54,11 +40,6 @@ const GettingStartedHero = styled.div`
   padding-left: 12%;
   padding-right: 12%;
   padding-top: 0%;
-  background-image: url("/images/home/bg-final.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: relative;
 
   @media (max-width: 768px) {
     display: flex;
@@ -77,11 +58,6 @@ const CarouselHero = styled.div`
   padding-left: 0%;
   padding-right: 0%;
   padding-bottom: 5%;
-  background-image: url("/images/home/bg-carousel.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: relative;
 
    @media (max-width: 768px) {
     display: flex;
@@ -110,7 +86,7 @@ export default function Home() {
       <div>
       <div className='two-posts'>
         <div className='home-card'>
-          <img src='/images/home/new-hero.png' alt='/'/>
+          <img src='/images/home/hero-no-bg.png' alt='/'/>
         </div>
         <div className='home-card'>
           <div className='row-padded-element'>          
