@@ -14,11 +14,6 @@ const FirstHero = styled.div`
   align-items: center;
   padding-left: 10%;
   padding-right: 10%;
-  background-image: url("/images/backgrounds/PAPER.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   
   @media (max-width: 768px) {
     padding-bottom: 100px;
@@ -29,21 +24,11 @@ const SecondHero = styled.div`
   padding-left: 10%;
   padding-right: 10%;
   padding-bottom: 5%;
-
-  background-image: url("/images/backgrounds/PAPER.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
 `
 
 const PartnersHero = styled.div`
   padding-left: 10%;
   padding-right: 10%;
-  background-image: url("/images/backgrounds/PAPER.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
 
   @media (max-width: 768px) {
     display: flex;
@@ -55,10 +40,6 @@ const GettingStartedHero = styled.div`
   padding-left: 12%;
   padding-right: 12%;
   padding-top: 0%;
-  background-image: url("/images/backgrounds/PAPER.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
 
   @media (max-width: 768px) {
     display: flex;
@@ -77,10 +58,6 @@ const CarouselHero = styled.div`
   padding-left: 0%;
   padding-right: 0%;
   padding-bottom: 5%;
-  background-image: url("/images/backgrounds/PAPER.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
 
    @media (max-width: 768px) {
     display: flex;
