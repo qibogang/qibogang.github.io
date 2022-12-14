@@ -23,8 +23,8 @@ const DropNav = () => {
           <div className="dropdown">
             <button className="dropbtn">Qibocal releases</button>
               <div className="dropdown-content">
-                <a href="#">Stable</a>
-                <a href="#">Latest</a>
+                <a href="/docs/qibocal/stable">Stable</a>
+                <a href="/docs/qibocal/latest">Latest</a>
               </div>
           </div> 
 
@@ -32,8 +32,8 @@ const DropNav = () => {
             <button className="dropbtn">Documentation</button>
               <div className="dropdown-content">
                 <a href="/docs/qibo/stable">Qibo</a>
-                <a href="/docs/qibolab/last">Qibolab</a>
-                <a href="/docs/qibocal/last">Qibocal</a>
+                <a href="/docs/qibolab/stable">Qibolab</a>
+                <a href="/docs/qibocal/stable">Qibocal</a>
               </div>
           </div> 
           
@@ -51,8 +51,8 @@ const DropNav = () => {
                 <a href="/">Home</a>
                 <a href="/tutorials">Tutorials</a>
                 <a href="/docs/qibo/stable">Qibo</a>
-                <a href="/docs/qibolab/last">Qibolab</a>
-                <a href="/docs/qibocal/last">Qibocal</a>
+                <a href="/docs/qibolab/stable">Qibolab</a>
+                <a href="/docs/qibocal/stable">Qibocal</a>
               </div>
           </div> 
 
