@@ -8,5 +8,5 @@ on:
   
 jobs:
 
-  deploy-docs:
+  publish:
     uses: qibogang/workflows/.github/workflows/publish-next-on-ghpages.yml@main
