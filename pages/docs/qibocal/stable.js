@@ -25,12 +25,10 @@ export default function Documentation() {
       <QibocalNavbar />
       <Hero>
         <iframe 
-          //src="https://qibo.readthedocs.io/en/stable/" 
-          src="https://qibogang.github.io/qibocal/"
+          src="https://qibogang.github.io/qibocal/stable/"
           title="Qibo docs"
           width='100%'
-          height='100%'
-          frameBorder="0">
+          height='100%'>
         </iframe> 
       </Hero>
       <Footer/>
