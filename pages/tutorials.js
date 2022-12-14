@@ -38,7 +38,7 @@ export default function Tutorials({tutorials}) {
        <Hero>
         <div className='posts'>
           {tutorials.map((tutorial, index) => (
-            <Tutorial tutorial={tutorial} />
+            <Tutorial tutorial={tutorial} key={tutorial.slug} />
           ))}
         </div>
       </Hero>
